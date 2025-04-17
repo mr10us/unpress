@@ -1,0 +1,56 @@
+/* [project]/src/components/Sections/BeforeAfterSection/BeforeAfterSection.module.css [app-client] (css) */
+.BeforeAfterSection-module__RBM6gW__gridCard {
+  --_border-size: 80%;
+  --_border-width: 1px;
+  --_border-color: #2c2c2c;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:first-child {
+  position: relative;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:first-child:after {
+  content: "";
+  height: var(--_border-size);
+  background-color: var(--_border-color);
+  width: var(--_border-width);
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -2.5rem;
+  transform: translate(-50%, -50%);
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3, .BeforeAfterSection-module__RBM6gW__gridCard > div > ul li {
+  position: relative;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3:after, .BeforeAfterSection-module__RBM6gW__gridCard > div > ul li:after {
+  content: "";
+  background-color: var(--_border-color);
+  height: var(--_border-width);
+  width: 120%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:last-child > h3:after, .BeforeAfterSection-module__RBM6gW__gridCard > div:last-child > ul li:after {
+  left: unset;
+  right: 3rem;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > ul li:last-child:after {
+  content: none;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3 {
+  padding-block: 25px;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > ul li {
+  padding-block: 20px;
+}
+
+/*# sourceMappingURL=1ab64_components_Sections_BeforeAfterSection_BeforeAfterSection_module_css_f9ee138c._.single.css.map*/

@@ -1,0 +1,203 @@
+/* [project]/src/components/Sections/BeforeAfterSection/BeforeAfterSection.module.css [app-client] (css) */
+.BeforeAfterSection-module__RBM6gW__gridCard {
+  --_border-size: 80%;
+  --_border-width: 1px;
+  --_border-color: #2c2c2c;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:first-child {
+  position: relative;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:first-child:after {
+  content: "";
+  height: var(--_border-size);
+  background-color: var(--_border-color);
+  width: var(--_border-width);
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -2.5rem;
+  transform: translate(-50%, -50%);
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3, .BeforeAfterSection-module__RBM6gW__gridCard > div > ul li {
+  position: relative;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3:after, .BeforeAfterSection-module__RBM6gW__gridCard > div > ul li:after {
+  content: "";
+  background-color: var(--_border-color);
+  height: var(--_border-width);
+  width: 120%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div:last-child > h3:after, .BeforeAfterSection-module__RBM6gW__gridCard > div:last-child > ul li:after {
+  left: unset;
+  right: 3rem;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > ul li:last-child:after {
+  content: none;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > h3 {
+  padding-block: 25px;
+}
+
+.BeforeAfterSection-module__RBM6gW__gridCard > div > ul li {
+  padding-block: 20px;
+}
+
+
+/* [project]/src/components/Sections/IntegrationRoadmapSection/IntegrationRoadmapSection.module.css [app-client] (css) */
+.IntegrationRoadmapSection-module__1keysG__listContainer {
+  margin-left: calc(-50vw + 50%);
+  width: 100vw;
+  margin-block: 4.6rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__listContainer:after {
+  content: "";
+  border-top: 1px dotted var(--color-gray-100);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list {
+  counter-reset: list 0;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li {
+  counter-increment: list;
+  border-left: 2px dotted var(--color-gray-100);
+  position: relative;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li:first-child {
+  margin-left: 2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li:before {
+  content: counter(list);
+  width: 4.6rem;
+  height: 4.6rem;
+  font-size: var(--text-5xl);
+  background: conic-gradient(from 180.51deg at 50% 50%, var(--background) 0deg, #683da1 70.74deg, #d642f2 168.37deg, #683da1 275.4deg, var(--background) 360deg);
+  color: var(--color-primary-foreground);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+}
+
+.IntegrationRoadmapSection-module__1keysG__top {
+  grid-row: 1;
+}
+
+.IntegrationRoadmapSection-module__1keysG__top:before {
+  top: -2.3rem;
+  left: -2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__bottom {
+  grid-row: 2;
+}
+
+.IntegrationRoadmapSection-module__1keysG__bottom:before {
+  bottom: -2.3rem;
+  left: -2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li p {
+  width: 50%;
+  margin-inline: auto;
+  padding-block: 12px;
+}
+
+
+/* [project]/src/components/Sections/IntegrationsSection/IntegrationsSection.module.css [app-client] (css) */
+.IntegrationsSection-module__EpPUrW__marquee {
+  -webkit-mask-image: linear-gradient(to right, #0000, #000 20% 80%, #0000);
+  mask-image: linear-gradient(to right, #0000, #000 20% 80%, #0000);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.IntegrationsSection-module__EpPUrW__marquee > div {
+  animation: 10s linear infinite IntegrationsSection-module__EpPUrW__marquee;
+}
+
+.IntegrationsSection-module__EpPUrW__marquee > div > span {
+  color: #0000;
+  background: linear-gradient(90deg, #760fff 0% 19.65%, #f600ff 46.77%, #760fff 76.5% 100%) text;
+}
+
+@keyframes IntegrationsSection-module__EpPUrW__marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* [project]/src/components/Sections/StepsSection/StepsSection.module.css [app-client] (css) */
+.StepsSection-module__itR32a__cards {
+  counter-reset: cards 0;
+}
+
+.StepsSection-module__itR32a__card {
+  counter-increment: cards;
+  isolation: isolate;
+  border-left: 1px solid #414141;
+  grid-template-rows: 60px 260px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  padding-left: 10px;
+  padding-right: 30px;
+  display: grid;
+  position: relative;
+}
+
+.StepsSection-module__itR32a__card:first-child {
+  border-left: none;
+}
+
+.StepsSection-module__itR32a__card > p {
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  font-size: 57px;
+}
+
+.StepsSection-module__itR32a__card > span {
+  grid-area: 2 / 2;
+  align-self: center;
+}
+
+.StepsSection-module__itR32a__card:after {
+  content: counter(cards, decimal-leading-zero);
+  z-index: -1;
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  font-size: 253px;
+  line-height: var(--leading-tight);
+  position: absolute;
+  top: .5rem;
+}
+
+
+/*# sourceMappingURL=src_components_Sections_30f341d7._.css.map*/

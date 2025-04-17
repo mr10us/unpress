@@ -1,4 +1,5 @@
 import { BeforeAfterSection } from "@/components/Sections/BeforeAfterSection/BeforeAfterSection";
+import { FinalSection } from "@/components/Sections/FinalSection/FinalSection";
 import { FloppySection } from "@/components/Sections/FloppySection/FloppySection";
 import { HeroSection } from "@/components/Sections/HeroSection/HeroSection";
 import { ImageSection } from "@/components/Sections/ImageSection/ImageSection";
@@ -7,6 +8,7 @@ import { IntegrationRoadmapSection } from "@/components/Sections/IntegrationRoad
 import { IntegrationsSection } from "@/components/Sections/IntegrationsSection/IntegrationsSection";
 import { ProblemsSection } from "@/components/Sections/ProblemsSection/ProblemsSection";
 import { StepsSection } from "@/components/Sections/StepsSection/StepsSection";
+import { TrustedSection } from "@/components/Sections/TrustedSection/TrustedSection";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <ImpactSection />
       <IntegrationRoadmapSection />
       <IntegrationsSection />
+      <TrustedSection />
+      <FinalSection />
     </>
   );
 }

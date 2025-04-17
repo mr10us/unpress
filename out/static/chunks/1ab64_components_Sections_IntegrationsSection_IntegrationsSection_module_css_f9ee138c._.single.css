@@ -1,0 +1,30 @@
+/* [project]/src/components/Sections/IntegrationsSection/IntegrationsSection.module.css [app-client] (css) */
+.IntegrationsSection-module__EpPUrW__marquee {
+  -webkit-mask-image: linear-gradient(to right, #0000, #000 20% 80%, #0000);
+  mask-image: linear-gradient(to right, #0000, #000 20% 80%, #0000);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.IntegrationsSection-module__EpPUrW__marquee > div {
+  animation: 10s linear infinite IntegrationsSection-module__EpPUrW__marquee;
+}
+
+.IntegrationsSection-module__EpPUrW__marquee > div > span {
+  color: #0000;
+  background: linear-gradient(90deg, #760fff 0% 19.65%, #f600ff 46.77%, #760fff 76.5% 100%) text;
+}
+
+@keyframes IntegrationsSection-module__EpPUrW__marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*# sourceMappingURL=1ab64_components_Sections_IntegrationsSection_IntegrationsSection_module_css_f9ee138c._.single.css.map*/

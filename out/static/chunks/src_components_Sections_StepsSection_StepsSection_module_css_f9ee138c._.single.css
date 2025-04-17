@@ -1,0 +1,45 @@
+/* [project]/src/components/Sections/StepsSection/StepsSection.module.css [app-client] (css) */
+.StepsSection-module__itR32a__cards {
+  counter-reset: cards 0;
+}
+
+.StepsSection-module__itR32a__card {
+  counter-increment: cards;
+  isolation: isolate;
+  border-left: 1px solid #414141;
+  grid-template-rows: 60px 260px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  padding-left: 10px;
+  padding-right: 30px;
+  display: grid;
+  position: relative;
+}
+
+.StepsSection-module__itR32a__card:first-child {
+  border-left: none;
+}
+
+.StepsSection-module__itR32a__card > p {
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  font-size: 57px;
+}
+
+.StepsSection-module__itR32a__card > span {
+  grid-area: 2 / 2;
+  align-self: center;
+}
+
+.StepsSection-module__itR32a__card:after {
+  content: counter(cards, decimal-leading-zero);
+  z-index: -1;
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  font-size: 253px;
+  line-height: var(--leading-tight);
+  position: absolute;
+  top: .5rem;
+}
+
+/*# sourceMappingURL=src_components_Sections_StepsSection_StepsSection_module_css_f9ee138c._.single.css.map*/

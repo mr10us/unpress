@@ -1,0 +1,71 @@
+/* [project]/src/components/Sections/IntegrationRoadmapSection/IntegrationRoadmapSection.module.css [app-client] (css) */
+.IntegrationRoadmapSection-module__1keysG__listContainer {
+  margin-left: calc(-50vw + 50%);
+  width: 100vw;
+  margin-block: 4.6rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__listContainer:after {
+  content: "";
+  border-top: 1px dotted var(--color-gray-100);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list {
+  counter-reset: list 0;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li {
+  counter-increment: list;
+  border-left: 2px dotted var(--color-gray-100);
+  position: relative;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li:first-child {
+  margin-left: 2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li:before {
+  content: counter(list);
+  width: 4.6rem;
+  height: 4.6rem;
+  font-size: var(--text-5xl);
+  background: conic-gradient(from 180.51deg at 50% 50%, var(--background) 0deg, #683da1 70.74deg, #d642f2 168.37deg, #683da1 275.4deg, var(--background) 360deg);
+  color: var(--color-primary-foreground);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+}
+
+.IntegrationRoadmapSection-module__1keysG__top {
+  grid-row: 1;
+}
+
+.IntegrationRoadmapSection-module__1keysG__top:before {
+  top: -2.3rem;
+  left: -2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__bottom {
+  grid-row: 2;
+}
+
+.IntegrationRoadmapSection-module__1keysG__bottom:before {
+  bottom: -2.3rem;
+  left: -2.3rem;
+}
+
+.IntegrationRoadmapSection-module__1keysG__list > li p {
+  width: 50%;
+  margin-inline: auto;
+  padding-block: 12px;
+}
+
+/*# sourceMappingURL=8fb66_IntegrationRoadmapSection_IntegrationRoadmapSection_module_css_f9ee138c._.single.css.map*/
