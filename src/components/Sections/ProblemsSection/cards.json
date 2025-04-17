@@ -1,0 +1,22 @@
+[
+  {
+    "img": "/images/delay.svg",
+    "title": "Hours lost",
+    "desc": "Hours lost on manual sourcing, fact-checking, and editing"
+  },
+  {
+    "img": "/images/process.svg",
+    "title": "Stale processes",
+    "desc": "Thousands of dollars drained by slow, outdated workflows"
+  },
+  {
+    "img": "/images/pc-error.svg",
+    "title": "Delayed",
+    "desc": "Delayed publications cost you first-mover advantage and audience trust."
+  },
+  {
+    "img": "/images/user-error.svg",
+    "title": "Human errors",
+    "desc": "Human errors risk your brand's credibility."
+  }
+]

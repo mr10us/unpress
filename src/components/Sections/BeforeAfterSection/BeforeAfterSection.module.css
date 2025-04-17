@@ -1,0 +1,55 @@
+.gridCard {
+  --_border-size: 80%;
+  --_border-width: 1px;
+  --_border-color: #2c2c2c;
+}
+
+.gridCard > div:first-child {
+  position: relative;
+}
+
+.gridCard > div:first-child::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -2.5rem;
+  transform: translate(-50%, -50%);
+  height: var(--_border-size);
+  background-color: var(--_border-color);
+  width: var(--_border-width);
+}
+
+.gridCard > div > h3,
+.gridCard > div > ul li {
+  position: relative;
+}
+.gridCard > div > h3::after,
+.gridCard > div > ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+
+  background-color: var(--_border-color);
+  height: var(--_border-width);
+  width: 120%;
+}
+
+.gridCard > div:last-child > h3::after,
+.gridCard > div:last-child > ul li::after {
+  left: unset;
+  right: 3rem;
+}
+
+.gridCard > div > ul li:last-child::after {
+  content: none;
+}
+
+.gridCard > div > h3 {
+  padding-block: 25px;
+}
+.gridCard > div > ul li {
+  padding-block: 20px;
+}

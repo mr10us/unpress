@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Up to 80%",
+    "desc": "Eliminate the manual work of sourcing, fact-checking, and drafting — freeing up your editorial team for higher-value tasks.",
+    "front_img": "/images/disks/disk_1.png",
+    "back_img": "/images/disks/disk_1_backplate.png"
+  },
+  {
+    "name": "3–5x faster",
+    "desc": "Eliminate the manual work of sourcing, fact-checking, and drafting — freeing up your editorial team for higher-value tasks.",
+    "front_img": "/images/disks/disk_2.png",
+    "back_img": "/images/disks/disk_2_backplate.png"
+  },
+  {
+    "name": "1200+ sources monitored in real-time",
+    "desc": "Eliminate the manual work of sourcing, fact-checking, and drafting — freeing up your editorial team for higher-value tasks.",
+    "front_img": "/images/disks/disk_3.png",
+    "back_img": "/images/disks/disk_3_backplate.png"
+  },
+  {
+    "name": "3x more productive",
+    "desc": "Eliminate the manual work of sourcing, fact-checking, and drafting — freeing up your editorial team for higher-value tasks.",
+    "front_img": "/images/disks/disk_4.png",
+    "back_img": "/images/disks/disk_4_backplate.png"
+  },
+  {
+    "name": "24/7 Content Delivery",
+    "desc": "Eliminate the manual work of sourcing, fact-checking, and drafting — freeing up your editorial team for higher-value tasks.",
+    "front_img": "/images/disks/disk_5.png",
+    "back_img": "/images/disks/disk_5_backplate.png"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "front_img": "/images/disks/disk_6.png",
+    "back_img": "/images/disks/disk_6_backplate.png"
+  }
+]

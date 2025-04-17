@@ -1,0 +1,27 @@
+.marquee {
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+}
+
+.marquee > div {
+  animation: marquee 10s linear infinite;
+}
+
+.marquee > div > span {
+  background: linear-gradient(90deg, rgba(118, 15, 255, 1) 0%, #760fff 19.65%, #f600ff 46.77%, #760fff 76.5%, rgba(118, 15, 255, 1) 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

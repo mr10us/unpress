@@ -1,0 +1,22 @@
+[
+  {
+    "img": "/images/integrations/wordpress.png",
+    "name": "Wordpress"
+  },
+  {
+    "img": "/images/integrations/drupal.png",
+    "name": "Drupal"
+  },
+  {
+    "img": "/images/integrations/ghost.png",
+    "name": "Ghost"
+  },
+  {
+    "img": "/images/integrations/contentful.png",
+    "name": "Contentful"
+  },
+  {
+    "img": "/images/integrations/webflow.png",
+    "name": "Webflow"
+  }
+]

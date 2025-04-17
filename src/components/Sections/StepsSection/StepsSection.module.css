@@ -1,0 +1,40 @@
+.cards {
+  counter-reset: cards 0;
+}
+
+.card {
+  counter-increment: cards;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 60px 260px;
+  column-gap: 2rem;
+  position: relative;
+  padding-right: 30px;
+  padding-left: 10px;
+  isolation: isolate;
+  border-left: 1px solid #414141;
+}
+.card:first-child {
+  border-left: none;
+}
+
+.card > p {
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  font-size: 57px;
+}
+.card > span {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+}
+.card:after {
+  content: counter(cards, decimal-leading-zero);
+  font-size: 253px;
+  position: absolute;
+  z-index: -1;
+  top: 0.5rem;
+  -webkit-text-stroke: 1px var(--color-primary);
+  -webkit-text-fill-color: transparent;
+  line-height: var(--leading-tight);
+}
