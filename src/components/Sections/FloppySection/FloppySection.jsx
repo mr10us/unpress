@@ -9,7 +9,7 @@ export const FloppySection = () => {
         <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold">
           <Highlight>Unpress AI </Highlight>Solves the Critical Bottlenecks:
         </h2>
-        <ul className="grid gap-16 lg:10">
+        <ul className="grid gap-16 md:10">
           {disks.map((disk, index) => {
             const diskImage = index === 0 ? disk.front_img : disk.back_img;
             const zIndex = disks.length - index;

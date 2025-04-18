@@ -33,7 +33,7 @@ export const IntegrationsSection = () => {
           </li>
         ))}
         <li className="flex items-center justify-center card">
-            <p className="text-silver text-2xl leading-9">And More...</p>
+            <p className="whitespace-nowrap text-silver text-2xl leading-9">And More...</p>
           </li>
       </ul>
     </section>
