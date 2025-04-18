@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[linear-gradient(180deg,_rgba(25,_1,_46,_0.5)_0%,_rgba(25,_1,_46,_0.15)_100%)] py-10">
+    <footer className="bg-[linear-gradient(180deg,_rgba(25,_1,_46,_0.5)_0%,_rgba(25,_1,_46,_0.15)_100%)] py-10 px-4 lg:px-0">
       <div className="container mx-auto">
         <div className="grid justify-center lg:grid-cols-[0.5fr_1fr_0.5fr] gap-x-20 gap-y-10 pb-4">
           <a href="/" className="flex items-center flex-col lg:block">

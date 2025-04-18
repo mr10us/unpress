@@ -12,7 +12,7 @@ export const FinalSection = () => {
 
         <Button className="rounded-[50px] px-10">Book a Call</Button>
       </div>
-      <div className="relative isolate w-1/2 md:w-full self-end justify-self-end z-0">
+      <div className="relative isolate w-1/2 md:w-full self-end justify-self-end z-0 overflow-hidden">
         <ExportedImage
           className="brightness-50 md:brightness-100"
           src="/images/ai_journalist.png"
