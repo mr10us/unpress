@@ -4,11 +4,11 @@ import ExportedImage from "next-image-export-optimizer";
 
 export const ProblemsSection = () => {
   return (
-    <section className="container mx-auto">
-      <h2 className="text-gray-100 text-6xl font-semibold mb-5">
+    <section className="container mx-auto px-4 lg:px-0">
+      <h2 className="mb-5">
         Time is Money. <Highlight>Save Both</Highlight>.
       </h2>
-      <p className="text-silver text-2xl leading-9">
+      <p className="text-silver text-xl leading-9">
         Traditional newsrooms waste critical resources every day:
       </p>
 

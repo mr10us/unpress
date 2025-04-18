@@ -4,9 +4,9 @@ import ExportedImage from "next-image-export-optimizer";
 
 export const FloppySection = () => {
   return (
-    <section className="bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] pt-40 h-screen">
-      <div className="container mx-auto grid grid-cols-[0.5fr_1fr] gap-10 items-center">
-        <h2 className="text-gray-100 font-semibold text-6xl leading-tight">
+    <section className="bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] pt-40 lg:h-screen">
+      <div className="container mx-auto px-4 lg:px-0 grid lg:grid-cols-[0.5fr_1fr] gap-10 items-center">
+        <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold">
           <Highlight>Unpress AI </Highlight>Solves the Critical Bottlenecks:
         </h2>
         <ul className="grid gap-10">
@@ -22,13 +22,14 @@ export const FloppySection = () => {
                 style={{ zIndex: zIndex }}
               >
                 <ExportedImage
+                className="w-1/2"
                   src={diskImage}
                   width="400"
                   height="235"
                   alt={disk.name}
                 />
-                <div className="w-full grid grid-cols-[0.2fr_1fr] gap-9">
-                  <div className="border-r border-gray-100 relative group-[.active]:block hidden">
+                <div className="w-full grid md:grid-cols-[0.2fr_1fr] md:gap-9">
+                  <div className="md:border-r border-gray-100 relative md:group-[.active]:block hidden">
                     <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-gray-100"></div>
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-100"></div>
                   </div>
@@ -36,7 +37,7 @@ export const FloppySection = () => {
                     <h3 className="font-600 group-[.active]:text-2xl group-[.active]:text-primary text-xl leading-tight text-[#A69AB2] mb-3.5">
                       {disk.name}
                     </h3>
-                    <p className="text-base leading-6 text-gray-100 group-[.active]:block hidden">
+                    <p className="text-base leading-6 text-gray-100 md:group-[.active]:block hidden">
                       {disk.desc}
                     </p>
                   </div>

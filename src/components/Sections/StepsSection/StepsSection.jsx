@@ -32,24 +32,29 @@ export const StepsSection = () => {
 
   return (
     <section>
-      <h2 className="text-gray-100 text-6xl font-semibold leading-tight text-center mb-20">
+      <h2 className="text-center mb-20">
         How <Highlight>Unpress AI</Highlight> Works
       </h2>
 
       <Carousel
-        className="container mx-auto mr-[calc((100vw-100%)_/_2)] w-full"
+        className="container mx-auto px-4 lg:px-0 mr-[calc((100vw-100%)_/_2)] w-full"
         plugins={[
           Autoplay({
             delay: 20000,
           }),
         ]}
-        setApi={setApi} // ⬅️ обязательно!
+        setApi={setApi}
+        opts={{
+          loop: true,
+          containScroll: "trimSnaps",
+          align: "start"
+        }}
       >
         <CarouselContent className={"-ml-1 " + styles.cards}>
           {steps.map((step, index) => (
             <CarouselItem
               key={index}
-              className={"pl-1 md:basis-[66%] lg:basis-[30%] " + styles.card}
+              className={"pl-1 basis-full md:basis-[66%] lg:basis-[30%] " + styles.card}
             >
               <p>STEP</p>
               <span>
@@ -66,7 +71,7 @@ export const StepsSection = () => {
           <button
             key={index}
             onClick={() => api?.scrollTo(index)}
-            className={`h-2.5 rounded-[10px] transition-all ${
+            className={`cursor-pointer h-2.5 rounded-[10px] transition-all ${
               index === selectedIndex ? "bg-primary w-20" : "bg-gray-100 w-10"
             }`}
           />

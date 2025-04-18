@@ -20,16 +20,16 @@ export const TrustedSection = () => {
   );
 
   return (
-    <section>
+    <section className="px-4 lg:px-0">
       <h2 className="text-center container mx-auto">Trust & Testimonials</h2>
-      <p className="text-center text-2xl leading-9 text-silver container mx-auto">Trusted by innovative media companies worldwide.</p>
+      <p className="text-center text-base lg:text-2xl leading-9 text-silver container mx-auto">Trusted by innovative media companies worldwide.</p>
 
       <Carousel
         plugins={[autoScroll.current]}
         opts={{
           loop: true,
         }}
-        className="mt-24"
+        className="mt-10 md:mt-16 lg:mt-24"
       >
         <CarouselContent className="-ml-4">
           {trusted.map((el, index) => (

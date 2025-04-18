@@ -155,6 +155,6 @@ header {
   }
 
   section > h2 {
-    @apply text-6xl font-semibold text-gray-100;
+    @apply text-4xl lg:text-6xl font-semibold text-gray-100;
   }
 }

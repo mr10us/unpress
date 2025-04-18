@@ -2,6 +2,7 @@
   --_border-size: 80%;
   --_border-width: 1px;
   --_border-color: #2c2c2c;
+  --_border-offset: 3rem;
 }
 
 .gridCard > div:first-child {
@@ -9,7 +10,7 @@
 }
 
 .gridCard > div:first-child::after {
-  content: "";
+  content: none;
   display: block;
   position: absolute;
   top: 50%;
@@ -30,17 +31,12 @@
   display: block;
   position: absolute;
   bottom: 0;
-  left: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
 
   background-color: var(--_border-color);
   height: var(--_border-width);
-  width: 120%;
-}
-
-.gridCard > div:last-child > h3::after,
-.gridCard > div:last-child > ul li::after {
-  left: unset;
-  right: 3rem;
+  width: var(--_border-size);
 }
 
 .gridCard > div > ul li:last-child::after {
@@ -52,4 +48,21 @@
 }
 .gridCard > div > ul li {
   padding-block: 20px;
+}
+
+@media (width >= 64rem /* 1024px */) {
+  .gridCard > div > h3::after,
+  .gridCard > div > ul li::after {
+    left: var(--_border-offset);
+    width: 120%;
+    transform: translateX(0);
+  }
+  .gridCard > div:last-child > h3::after,
+  .gridCard > div:last-child > ul li::after {
+    left: unset;
+    right: var(--_border-offset);
+  }
+  .gridCard > div:first-child::after {
+    content: "";
+  }
 }

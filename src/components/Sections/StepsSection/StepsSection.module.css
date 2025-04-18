@@ -38,3 +38,9 @@
   -webkit-text-fill-color: transparent;
   line-height: var(--leading-tight);
 }
+
+@media (width >= 48rem /* 768px */) {
+  .card {
+    border-left: none;
+  }
+}
