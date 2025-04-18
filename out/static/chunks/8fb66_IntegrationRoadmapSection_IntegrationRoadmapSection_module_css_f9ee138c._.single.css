@@ -1,12 +1,10 @@
 /* [project]/src/components/Sections/IntegrationRoadmapSection/IntegrationRoadmapSection.module.css [app-client] (css) */
 .IntegrationRoadmapSection-module__1keysG__listContainer {
-  margin-left: calc(-50vw + 50%);
-  width: 100vw;
   margin-block: 4.6rem;
 }
 
 .IntegrationRoadmapSection-module__1keysG__listContainer:after {
-  content: "";
+  content: none;
   border-top: 1px dotted var(--color-gray-100);
   width: 100%;
   height: 1px;
@@ -16,17 +14,11 @@
 
 .IntegrationRoadmapSection-module__1keysG__list {
   counter-reset: list 0;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .IntegrationRoadmapSection-module__1keysG__list > li {
   counter-increment: list;
-  border-left: 2px dotted var(--color-gray-100);
   position: relative;
-}
-
-.IntegrationRoadmapSection-module__1keysG__list > li:first-child {
-  margin-left: 2.3rem;
 }
 
 .IntegrationRoadmapSection-module__1keysG__list > li:before {
@@ -41,31 +33,63 @@
   align-items: center;
   font-weight: 600;
   display: flex;
-  position: absolute;
-}
-
-.IntegrationRoadmapSection-module__1keysG__top {
-  grid-row: 1;
-}
-
-.IntegrationRoadmapSection-module__1keysG__top:before {
-  top: -2.3rem;
-  left: -2.3rem;
-}
-
-.IntegrationRoadmapSection-module__1keysG__bottom {
-  grid-row: 2;
-}
-
-.IntegrationRoadmapSection-module__1keysG__bottom:before {
-  bottom: -2.3rem;
-  left: -2.3rem;
 }
 
 .IntegrationRoadmapSection-module__1keysG__list > li p {
-  width: 50%;
-  margin-inline: auto;
   padding-block: 12px;
+}
+
+@media (width >= 48rem) {
+  .IntegrationRoadmapSection-module__1keysG__listContainer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__listContainer:after {
+    content: "";
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__list > li {
+    border-left: 2px dotted var(--color-gray-100);
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__list > li:before {
+    position: absolute;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__list > li p {
+    z-index: 1;
+    width: 60%;
+    margin-inline: auto;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__list > li:first-child {
+    margin-left: 2.3rem;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__top {
+    grid-row: 1;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__bottom {
+    grid-row: 2;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__top:before {
+    top: -2.3rem;
+    left: -2.3rem;
+  }
+
+  .IntegrationRoadmapSection-module__1keysG__bottom:before {
+    bottom: -2.3rem;
+    left: -2.3rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .IntegrationRoadmapSection-module__1keysG__list > li p {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=8fb66_IntegrationRoadmapSection_IntegrationRoadmapSection_module_css_f9ee138c._.single.css.map*/

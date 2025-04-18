@@ -10,12 +10,16 @@ export const IntegrationsSection = () => {
         <h2 className="text-4xl lg:text-6xl font-semibold text-gray-100">
           <Highlight>CMS</Highlight> Integrations
         </h2>
-        <div className={`relative flex items-center row-start-1 md:row-auto overflow-hidden whitespace-nowrap ${styles.marquee}`}>
-          <div className="inline-block">
-            <span className="mx-4">
+        <div
+          className={`relative inline-block w-full row-start-1 md:row-auto overflow-hidden whitespace-nowrap ${styles.marquee}`}
+        >
+          <div className="inline-flex w-max items-center pr-20">
+            <span>
               Upgrade your newsroom seamlessly — no disruptions involved.
             </span>
-            <span className="mx-4">
+          </div>
+          <div className="inline-flex w-max items-center pr-20">
+            <span>
               Upgrade your newsroom seamlessly — no disruptions involved.
             </span>
           </div>
@@ -27,14 +31,24 @@ export const IntegrationsSection = () => {
       </div>
 
       <ul className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-4 [&>*]:p-5 mt-14">
-        {integrations.map(integration => (
-          <li key={integration.name} className="flex items-center justify-center card">
-            <ExportedImage src={integration.img} alt={integration.name} width="150" height="150" />
+        {integrations.map((integration) => (
+          <li
+            key={integration.name}
+            className="flex items-center justify-center card"
+          >
+            <ExportedImage
+              src={integration.img}
+              alt={integration.name}
+              width="150"
+              height="150"
+            />
           </li>
         ))}
         <li className="flex items-center justify-center card">
-            <p className="whitespace-nowrap text-silver text-2xl leading-9">And More...</p>
-          </li>
+          <p className="whitespace-nowrap text-silver text-2xl leading-9">
+            And More...
+          </p>
+        </li>
       </ul>
     </section>
   );

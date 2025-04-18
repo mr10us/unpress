@@ -47,7 +47,7 @@ export const StepsSection = () => {
         opts={{
           loop: true,
           containScroll: "trimSnaps",
-          align: "start"
+          align: "start",
         }}
       >
         <CarouselContent className={"-ml-1 " + styles.cards}>

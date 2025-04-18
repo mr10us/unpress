@@ -29,10 +29,16 @@ export const Footer = () => {
               <Button className="rounded-l-none border border-primary rounded-r-[20px]">Send</Button>
             </div>
           </form>
-          <div className="flex lg:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
+          <div className="grid grid-cols-2 md:flex md:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
             <a href="tel:+380999999999">+38 000 000 00</a>
-            <a className="underline" href="mailto:example@example.com">
-              example@example.com
+            <a className="underline" href="mailto:seo@unpress.ai.com">
+              seo@unpress.ai.com
+            </a>
+            <a className="underline" href="mailto:legal@unpress.ai.com">
+              sales@unpress.ai.com
+            </a>
+            <a className="underline" href="mailto:legali@unpress.ai.com">
+              legal@unpress.ai.com
             </a>
           </div>
         </div>

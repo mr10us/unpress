@@ -42,4 +42,10 @@
   top: .5rem;
 }
 
+@media (width >= 48rem) {
+  .StepsSection-module__itR32a__card {
+    border-left: none;
+  }
+}
+
 /*# sourceMappingURL=src_components_Sections_StepsSection_StepsSection_module_css_f9ee138c._.single.css.map*/
