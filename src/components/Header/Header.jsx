@@ -12,15 +12,15 @@ export const Header = () => {
           </a>
           <nav className="h-fit justify-self-start hidden lg:block">
             <ul className="flex gap-4 text-gray-100 text-base">
-              {navLinks.map((link, index) => (
+              { /* navLinks.map((link, index) => (
                 <li key={link.name + index}>
                   <Link href="link.href">{link.name}</Link>
                 </li>
-              ))}
+              )) */ }
             </ul>
           </nav>
           <div className="flex gap-5 items-center justify-self-end col-start-3">
-            <a href="#" target="_blank" className="text-base text-gray-300">
+            <a href="https://unpressai.cloud/" target="_blank" className="text-base text-gray-300">
               Login
             </a>
             <a

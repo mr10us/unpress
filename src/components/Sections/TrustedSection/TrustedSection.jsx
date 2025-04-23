@@ -8,6 +8,7 @@ import {
 import AutoScroll from "embla-carousel-auto-scroll";
 import { useRef } from "react";
 import trusted from "./trusted.json";
+import { Card } from "@/components/ui/card";
 
 export const TrustedSection = () => {
   const autoScroll = useRef(
@@ -22,7 +23,9 @@ export const TrustedSection = () => {
   return (
     <section className="px-4 lg:px-0">
       <h2 className="text-center container mx-auto">Trust & Testimonials</h2>
-      <p className="text-center text-base lg:text-2xl leading-9 text-silver container mx-auto">Trusted by innovative media companies worldwide.</p>
+      <p className="text-center text-base lg:text-2xl leading-9 text-silver container mx-auto">
+        Trusted by innovative media companies worldwide.
+      </p>
 
       <Carousel
         plugins={[autoScroll.current]}
@@ -33,11 +36,16 @@ export const TrustedSection = () => {
       >
         <CarouselContent className="-ml-4">
           {trusted.map((el, index) => (
-            <CarouselItem key={index} className="card basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100">{index}</CarouselItem>
+            <Card
+              key={index}
+              asChild
+              className="basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100"
+            >
+              <CarouselItem>{index}</CarouselItem>
+            </Card>
           ))}
         </CarouselContent>
       </Carousel>
     </section>
   );
 };
-

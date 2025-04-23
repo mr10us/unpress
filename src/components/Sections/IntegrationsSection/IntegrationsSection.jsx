@@ -1,29 +1,46 @@
+"use client";
+
 import { Highlight } from "@/components/ui/Highlight";
-import styles from "./IntegrationsSection.module.css";
+import AutoScroll from "embla-carousel-auto-scroll";
 import integrations from "./integrations.json";
 import ExportedImage from "next-image-export-optimizer";
+import { Card } from "@/components/ui/card";
+import { useRef } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import styles from "./IntegrationsSection.module.css"
 
 export const IntegrationsSection = () => {
+  const autoScroll = useRef(
+    AutoScroll({
+      speed: 1,
+      stopOnFocusIn: true,
+      stopOnMouseEnter: true,
+      stopOnInteraction: false,
+    })
+  );
+
   return (
     <section className="container mx-auto px-4 lg:px-0">
       <div className="grid md:grid-cols-2 gap-y-4">
         <h2 className="text-4xl lg:text-6xl font-semibold text-gray-100">
           <Highlight>CMS</Highlight> Integrations
         </h2>
-        <div
-          className={`relative inline-block w-full row-start-1 md:row-auto overflow-hidden whitespace-nowrap ${styles.marquee}`}
+        <Carousel
+          plugins={[autoScroll.current]}
+          opts={{
+            loop: true,
+          }}
+          className={`flex items-center row-start-1 md:row-auto ${styles.marqueeContainer}`}
         >
-          <div className="inline-flex w-max items-center pr-20">
-            <span>
-              Upgrade your newsroom seamlessly — no disruptions involved.
-            </span>
-          </div>
-          <div className="inline-flex w-max items-center pr-20">
-            <span>
-              Upgrade your newsroom seamlessly — no disruptions involved.
-            </span>
-          </div>
-        </div>
+          <CarouselContent>
+            <CarouselItem className={`basis-full ${styles.marquee}`}>Your newsroom, upgraded — without disruption.</CarouselItem>
+            <CarouselItem className={`basis-full ${styles.marquee}`}>Your newsroom, upgraded — without disruption.</CarouselItem>
+          </CarouselContent>
+        </Carousel>
 
         <p className="text-silver text-base lg:text-2xl leading-9 md:col-span-2">
           Seamless Integration with Leading CMS Platforms
@@ -32,23 +49,28 @@ export const IntegrationsSection = () => {
 
       <ul className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-4 [&>*]:p-5 mt-14">
         {integrations.map((integration) => (
-          <li
+          <Card
             key={integration.name}
-            className="flex items-center justify-center card"
+            asChild
+            className="flex items-center justify-center"
           >
-            <ExportedImage
-              src={integration.img}
-              alt={integration.name}
-              width="150"
-              height="150"
-            />
-          </li>
+            <li>
+              <ExportedImage
+                src={integration.img}
+                alt={integration.name}
+                width="150"
+                height="150"
+              />
+            </li>
+          </Card>
         ))}
-        <li className="flex items-center justify-center card">
-          <p className="whitespace-nowrap text-silver text-2xl leading-9">
-            And More...
-          </p>
-        </li>
+        <Card asChild className="flex items-center justify-center">
+          <li className="flex items-center justify-center">
+            <p className="whitespace-nowrap text-silver text-2xl leading-9">
+              And More...
+            </p>
+          </li>
+        </Card>
       </ul>
     </section>
   );
