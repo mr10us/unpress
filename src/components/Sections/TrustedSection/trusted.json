@@ -1,7 +1,6 @@
 [
-  {"name": ""},
-  {"name": ""},
-  {"name": ""},
-  {"name": ""},
-  {"name": ""}
+  {"name": "Kyiv24", "image": "/images/trust/kyiv.svg", "href": "https://kyiv24.news/"},
+  {"name": "Root Nation", "image": "/images/trust/RN.webp", "href": "https://root-nation.com/en/"},
+  {"name": "AIN", "image": "/images/trust/ain.svg", "href": "https://ain.ua/"},
+  {"name": "ProUkrainu", "image": "/images/trust/proukrainu.png", "href": "https://proukrainu.blesk.cz/"}
 ]

@@ -7,9 +7,10 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import steps from "./steps.json";
 import styles from "./StepsSection.module.css";
+import Typewriter from "@/components/animations/Typewriter/Typewriter";
 
 
 export const StepsSection = () => {
@@ -32,9 +33,11 @@ export const StepsSection = () => {
 
   return (
     <section>
+      <Typewriter asChild>
       <h2 className="text-center mb-20">
         How <Highlight>Unpress AI</Highlight> Works
       </h2>
+      </Typewriter>
 
       <Carousel
         className="container mx-auto px-4 lg:px-0 mr-[calc((100vw-100%)_/_2)] w-full"

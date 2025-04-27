@@ -87,15 +87,22 @@ header {
   background: var(--background);
 }
 
+.card.loading::after {
+  opacity: 0;
+}
+
 .card::after {
   content: "";
   position: absolute;
   inset: -4px;
   z-index: -1;
+  opacity: 1;
   background: conic-gradient(from var(--gradient-angle), #760fff, transparent, transparent, transparent, transparent, transparent, transparent, transparent, transparent, transparent, #760fff);
   border-radius: inherit;
   animation: rotation 5s linear infinite;
   animation-delay: var(--delay);
+
+  transition: opacity 0.3s ease-in-out;
 }
 
 @keyframes rotation {

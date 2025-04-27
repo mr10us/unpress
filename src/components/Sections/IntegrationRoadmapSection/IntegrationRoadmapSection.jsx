@@ -1,6 +1,9 @@
+"use client";
+
 import { Highlight } from "@/components/ui/Highlight";
 import roadmap from "./roadmap.json";
 import styles from "./IntegrationRoadmapSection.module.css";
+import { motion } from "motion/react";
 
 export const IntegrationRoadmapSection = () => {
   return (
@@ -20,8 +23,18 @@ export const IntegrationRoadmapSection = () => {
             const position = index % 2 === 0 ? "top" : "bottom";
 
             return (
-              <li
+              <motion.li
                 key={step.name}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  delay: index * 0.3,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                  duration: 2,
+                }}
+                viewport={{ once: true, amount: 0.3 }}
                 className={`grid grid-cols-[auto_1fr] gap-5 md:flex items-center md:justify-between border-gray-100 md:col-start-[var(--grid-position)] ${
                   position === "top" ? styles.top : styles.bottom
                 }`}
@@ -30,7 +43,7 @@ export const IntegrationRoadmapSection = () => {
                 <p className="font-semibold text-base text-gray-100">
                   {step.name}
                 </p>
-              </li>
+              </motion.li>
             );
           })}
         </ul>

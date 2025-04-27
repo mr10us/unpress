@@ -24,7 +24,7 @@ export const Header = () => {
               Login
             </a>
             <a
-              href="#"
+              href="https://calendly.com/sergej-simonenko"
               target="_blank"
               className="text-base text-gray-100 font-semibold flex border border-gray-500 rounded-full w-fit items-center overflow-hidden group"
             >

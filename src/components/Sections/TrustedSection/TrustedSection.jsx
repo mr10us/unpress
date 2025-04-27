@@ -11,6 +11,7 @@ import trusted from "./trusted.json";
 import { Card } from "@/components/ui/card";
 
 export const TrustedSection = () => {
+  const extendedTrusted = [...trusted, ...trusted];
   const autoScroll = useRef(
     AutoScroll({
       speed: 1,
@@ -34,15 +35,24 @@ export const TrustedSection = () => {
         }}
         className="mt-10 md:mt-16 lg:mt-24"
       >
-        <CarouselContent className="-ml-4">
-          {trusted.map((el, index) => (
-            <Card
+        <CarouselContent className="py-4 -ml-4">
+          {extendedTrusted.map((el, index) => (
+            <CarouselItem
               key={index}
-              asChild
               className="basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100"
             >
-              <CarouselItem>{index}</CarouselItem>
-            </Card>
+              <Card asChild className="w-full h-full block !bg-white">
+                <a href={el.href} target="_blank">
+                  <img
+                    src={el.image}
+                    alt={el.name}
+                    width="100"
+                    height="100"
+                    className="object-contain object-center w-full h-full"
+                  />
+                </a>
+              </Card>
+            </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>

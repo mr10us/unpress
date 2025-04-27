@@ -1,14 +1,19 @@
 import { Highlight } from "@/components/ui/Highlight";
 import styles from "./BeforeAfterSection.module.css";
+import Typewriter from "@/components/animations/Typewriter/Typewriter";
 
 export const BeforeAfterSection = () => {
   return (
     <section className="container mx-auto">
-      <h2 className="text-center mb-20">
-        Before & <Highlight>After</Highlight>
-      </h2>
+      <Typewriter asChild>
+        <h2 className="text-center mb-20">
+          Before & <Highlight>After</Highlight>
+        </h2>
+      </Typewriter>
 
-      <div className={`card w-4/5 mx-auto grid lg:grid-cols-2 gap-20 ${styles.gridCard}`}>
+      <div
+        className={`card w-4/5 mx-auto grid lg:grid-cols-2 gap-20 ${styles.gridCard}`}
+      >
         <div className="text-center">
           <h3 className="font-semibold text-lg lg:text-3xl leading-tight text-[#B1B1B1]">
             Traditional Newsroom
@@ -27,7 +32,7 @@ export const BeforeAfterSection = () => {
         </div>
         <div className="text-center">
           <h3 className="font-semibold text-lg lg:text-3xl leading-tight text-gray-100">
-           <Highlight>UNPRESS AI </Highlight>Newsroom
+            <Highlight>UNPRESS AI </Highlight>Newsroom
           </h3>
           <ul className="text-gray-100 text-base">
             <li>
