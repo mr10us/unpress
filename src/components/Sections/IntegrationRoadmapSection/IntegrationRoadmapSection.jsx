@@ -34,7 +34,7 @@ export const IntegrationRoadmapSection = () => {
                   damping: 12,
                   duration: 2,
                 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: "all" }}
                 className={`grid grid-cols-[auto_1fr] gap-5 md:flex items-center md:justify-between border-gray-100 md:col-start-[var(--grid-position)] ${
                   position === "top" ? styles.top : styles.bottom
                 }`}

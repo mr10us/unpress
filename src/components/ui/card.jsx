@@ -1,16 +1,14 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useState, useRef } from "react";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 function Card({ className, asChild = false, ...props }) {
+  const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoaded(true);
-    }, 2000);
-    return () => clearTimeout(timeout);
-  }, []);
+  useIntersectionObserver(ref, () => {
+    setTimeout(() => setLoaded(true), 3000);
+  });
 
   const Comp = asChild ? Slot : "div";
 
@@ -18,6 +16,7 @@ function Card({ className, asChild = false, ...props }) {
   return (
     <Comp
       data-slot="div"
+      ref={ref}
       className={cn(`card ${loaded ? "" : "loading"}`, className)}
       style={{ "--delay": `${delay}s` }}
       {...props}
