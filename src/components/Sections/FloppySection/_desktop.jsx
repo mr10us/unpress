@@ -36,7 +36,7 @@ export const _desktop = () => {
     });
 
     gsap.set(lastDisk, {
-      yPercent: 100,
+      yPercent: 200,
       opacity: 0,
       scale: 0.95,
       filter: "grayscale(1)",
