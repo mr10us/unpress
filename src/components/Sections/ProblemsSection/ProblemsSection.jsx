@@ -10,11 +10,10 @@ import { motion } from "motion/react";
 export const ProblemsSection = () => {
   return (
     <section className="container mx-auto px-4 lg:px-0">
-      <Typewriter asChild>
-        <h2 className="mb-5">
-          Time is Money. <Highlight>Save Both</Highlight>.
-        </h2>
-      </Typewriter>
+      <h2 className="mb-5 flex gap-4">
+        <Typewriter>Time is Money.</Typewriter>
+        <Highlight><Typewriter delay={1000}>Save Both.</Typewriter></Highlight>
+      </h2>
       <Typewriter asChild>
         <p className="text-silver text-xl leading-9">
           Traditional newsrooms waste critical resources every day:

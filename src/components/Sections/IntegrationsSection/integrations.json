@@ -1,22 +1,27 @@
 [
   {
     "img": "/images/integrations/wordpress.png",
-    "name": "Wordpress"
+    "name": "Wordpress",
+    "href": "https://wordpress.org/"
   },
   {
     "img": "/images/integrations/drupal.png",
-    "name": "Drupal"
+    "name": "Drupal",
+    "href": "https://new.drupal.org/home"
   },
   {
     "img": "/images/integrations/ghost.png",
-    "name": "Ghost"
+    "name": "Ghost",
+    "href": "https://ghost.org/"
   },
   {
     "img": "/images/integrations/contentful.png",
-    "name": "Contentful"
+    "name": "Contentful",
+    "href": "https://www.contentful.com/"
   },
   {
     "img": "/images/integrations/webflow.png",
-    "name": "Webflow"
+    "name": "Webflow",
+    "href": "https://webflow.com/"
   }
 ]

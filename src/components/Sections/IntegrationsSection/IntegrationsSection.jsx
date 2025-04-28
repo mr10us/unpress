@@ -25,8 +25,9 @@ export const IntegrationsSection = () => {
   );
 
   return (
-    <section className="container mx-auto px-4 lg:px-0">
-      <div className="grid md:grid-cols-2 gap-y-4">
+    <section className="relative px-4 lg:px-0">
+      <ExportedImage className="absolute bottom-0 h-full -z-10" src="/images/backgroundGradient.webp" width="1920" height="1080" alt="section background" />
+      <div className="container mx-auto grid md:grid-cols-2 gap-y-4">
         <h2 className="text-4xl lg:text-6xl font-semibold text-gray-100">
           <Highlight>CMS</Highlight> Integrations
         </h2>
@@ -52,12 +53,12 @@ export const IntegrationsSection = () => {
         </p>
       </div>
 
-      <ul className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-4 [&>*]:p-5 mt-14">
+      <ul className="container mx-auto grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-4 [&>*]:p-5 mt-14">
         {integrations.map((integration, index) => (
           <Card
             key={integration.name}
             asChild
-            className="flex items-center justify-center"
+            style={{padding: 0}}
           >
             <motion.li
               key={integration.name}
@@ -71,12 +72,14 @@ export const IntegrationsSection = () => {
               }}
               viewport={{ once: true, amount: 0.3 }}
             >
+              <a className="w-full h-full flex items-center justify-center p-5" href={integration.href} target="_blank">
               <ExportedImage
                 src={integration.img}
                 alt={integration.name}
                 width="150"
                 height="150"
               />
+              </a>
             </motion.li>
           </Card>
         ))}

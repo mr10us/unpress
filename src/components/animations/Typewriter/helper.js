@@ -1,18 +1,17 @@
-export default function setupTypewriter(t) {
+export default function setupTypewriter(t, delay = 0) {
   const HTML = t.textContent;
   const height = t.offsetHeight;
   t.innerHTML = "";
   t.style.minHeight = `${height}px`;
 
   const totalCharacters = HTML.length;
-
   const baseSpeed = 1000 / totalCharacters;
 
   let cursorPosition = 0,
-    tag = "",
-    writingTag = false,
-    tagOpen = false,
-    tempTypeSpeed = 0;
+      tag = "",
+      writingTag = false,
+      tagOpen = false,
+      tempTypeSpeed = 0;
 
   function type() {
     const char = HTML[cursorPosition];
@@ -60,5 +59,14 @@ export default function setupTypewriter(t) {
     }
   }
 
-  return { type };
+  // Здесь ставим задержку старта, если нужно
+  function start() {
+    if (delay > 0) {
+      setTimeout(type, delay);
+    } else {
+      type();
+    }
+  }
+
+  return { start };
 }

@@ -50,7 +50,7 @@ export const _desktop = () => {
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=" + window.innerHeight * (total + 5),
+        end: "+=" + window.innerHeight * (total + 2),
         scrub: true,
         pin: true,
       },

@@ -22,11 +22,14 @@ export const IntegrationRoadmapSection = () => {
           {roadmap.map((step, index) => {
             const position = index % 2 === 0 ? "top" : "bottom";
 
+            const startPositionTransition = position === "top" ? {opacity: 0, y: -100} : {opacity: 0, y: 100};
+            const endPositionTransition = {opacity: 1, y: 0};
+
             return (
               <motion.li
                 key={step.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={startPositionTransition}
+                whileInView={endPositionTransition}
                 transition={{
                   delay: index * 0.3,
                   type: "spring",

@@ -33,11 +33,10 @@ export const StepsSection = () => {
 
   return (
     <section>
-      <Typewriter asChild>
-      <h2 className="text-center mb-20">
-        How <Highlight>Unpress AI</Highlight> Works
+      
+      <h2 className="mb-20 flex gap-4 justify-center">
+        <Typewriter>How </Typewriter><Highlight><Typewriter delay={500}>Unpress AI</Typewriter></Highlight><Typewriter delay={1000}> Works</Typewriter>
       </h2>
-      </Typewriter>
 
       <Carousel
         className="container mx-auto px-4 lg:px-0 mr-[calc((100vw-100%)_/_2)] w-full"

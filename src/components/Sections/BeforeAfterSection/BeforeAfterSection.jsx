@@ -5,11 +5,11 @@ import Typewriter from "@/components/animations/Typewriter/Typewriter";
 export const BeforeAfterSection = () => {
   return (
     <section className="container mx-auto">
-      <Typewriter asChild>
-        <h2 className="text-center mb-20">
-          Before & <Highlight>After</Highlight>
+      
+        <h2 className="mb-20 flex justify-center gap-4">
+        <Typewriter>Before & </Typewriter><Highlight><Typewriter delay={1000}>After</Typewriter></Highlight>
         </h2>
-      </Typewriter>
+      
 
       <div
         className={`card w-4/5 mx-auto grid lg:grid-cols-2 gap-20 ${styles.gridCard}`}

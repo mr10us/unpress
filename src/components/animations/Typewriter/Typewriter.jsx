@@ -3,7 +3,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
-import styles from "./Typewriter.module.css";
 import setupTypewriter from "./helper";
 
 export default function Typewriter({
@@ -18,7 +17,7 @@ export default function Typewriter({
 
   useEffect(() => {
     if (isVisible && ref.current) {
-      setupTypewriter(ref.current).type();
+      setupTypewriter(ref.current, delay).start();
     }
   }, [isVisible]);
 

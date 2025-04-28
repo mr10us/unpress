@@ -39,16 +39,16 @@ export const TrustedSection = () => {
           {extendedTrusted.map((el, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100"
+              className="basis-1/2 md:basis-1/3 lg:basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100"
             >
-              <Card asChild className="w-full h-full block !bg-white">
+              <Card asChild className="w-full h-full block !bg-white" style={{padding: 0}}>
                 <a href={el.href} target="_blank">
                   <img
                     src={el.image}
                     alt={el.name}
                     width="100"
                     height="100"
-                    className="object-contain object-center w-full h-full"
+                    className="object-contain object-center w-full h-full p-5"
                   />
                 </a>
               </Card>
