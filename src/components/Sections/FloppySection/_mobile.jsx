@@ -9,7 +9,7 @@ import {
 
 export const _mobile = () => {
   const disks = disksData.slice(1, -1);
-  const [openItem, setOpenItem] = useState("item-0"); // Стартовый активный item
+  const [openItem, setOpenItem] = useState("item-0");
 
   return (
     <ul className="relative w-full h-full">

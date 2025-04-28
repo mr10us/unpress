@@ -5,8 +5,11 @@ import roadmap from "./roadmap.json";
 import styles from "./IntegrationRoadmapSection.module.css";
 import { motion } from "motion/react";
 import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export const IntegrationRoadmapSection = () => {
+  const isDesktop = useIsDesktop();
+
   return (
     <section className="container mx-auto px-4 lg:px-0">
       <Typewriter asChild>
@@ -30,6 +33,10 @@ export const IntegrationRoadmapSection = () => {
                 ? { opacity: 0, y: -100 }
                 : { opacity: 0, y: 100 };
             const endPositionTransition = { opacity: 1, y: 0 };
+
+            if (!isDesktop) {
+              startPositionTransition.y = 100;
+            }
 
             return (
               <motion.li
