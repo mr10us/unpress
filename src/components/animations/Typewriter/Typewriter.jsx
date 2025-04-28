@@ -5,7 +5,7 @@ import { Slot } from "@radix-ui/react-slot";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import setupTypewriter from "./helper";
 
-export default function Typewriter({
+export function Typewriter({
   children,
   delay = 0,
   asChild = false,
@@ -21,7 +21,7 @@ export default function Typewriter({
     }
   }, [isVisible]);
 
-  const Comp = asChild ? Slot : "div";
+  const Comp = asChild ? Slot : "span";
 
   return (
     <Comp

@@ -5,7 +5,7 @@ import { Highlight } from "@/components/ui/Highlight";
 import { Button } from "@/components/ui/button";
 import { HeroGeometry } from "@/components/Geometry/HeroGeometry";
 import Tilt from "@/components/animations/Tilt/Tilt";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 import { motion } from "motion/react";
 
 export const HeroSection = () => {

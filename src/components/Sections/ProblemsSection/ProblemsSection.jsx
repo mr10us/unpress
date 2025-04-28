@@ -4,16 +4,18 @@ import { Highlight } from "@/components/ui/Highlight";
 import cards from "./cards.json";
 import ExportedImage from "next-image-export-optimizer";
 import { Card } from "@/components/ui/card";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 import { motion } from "motion/react";
 
 export const ProblemsSection = () => {
   return (
     <section className="container mx-auto px-4 lg:px-0">
-      <h2 className="mb-5 flex gap-4">
-        <Typewriter>Time is Money.</Typewriter>
-        <Highlight><Typewriter delay={1000}>Save Both.</Typewriter></Highlight>
-      </h2>
+      <Typewriter asChild>
+        <h2 className="mb-5 flex gap-4">
+          Time is Money.
+          <Highlight>Save Both.</Highlight>
+        </h2>
+      </Typewriter>
       <Typewriter asChild>
         <p className="text-silver text-xl leading-9">
           Traditional newsrooms waste critical resources every day:

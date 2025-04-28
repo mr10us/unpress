@@ -10,8 +10,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import steps from "./steps.json";
 import styles from "./StepsSection.module.css";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
-
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 
 export const StepsSection = () => {
   const [api, setApi] = useState();
@@ -33,10 +32,11 @@ export const StepsSection = () => {
 
   return (
     <section>
-      
-      <h2 className="mb-20 flex gap-4 justify-center">
-        <Typewriter>How </Typewriter><Highlight><Typewriter delay={500}>Unpress AI</Typewriter></Highlight><Typewriter delay={1000}> Works</Typewriter>
-      </h2>
+      <Typewriter asChild>
+        <h2 className="mb-20 text-center">
+          How <Highlight>Unpress AI</Highlight> Works
+        </h2>
+      </Typewriter>
 
       <Carousel
         className="container mx-auto px-4 lg:px-0 mr-[calc((100vw-100%)_/_2)] w-full"
@@ -56,7 +56,9 @@ export const StepsSection = () => {
           {steps.map((step, index) => (
             <CarouselItem
               key={index}
-              className={"pl-1 basis-full md:basis-[66%] lg:basis-[30%] " + styles.card}
+              className={
+                "pl-1 basis-full md:basis-[66%] lg:basis-[30%] " + styles.card
+              }
             >
               <p>STEP</p>
               <span>

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import styles from "./IntegrationsSection.module.css";
 import { motion } from "motion/react";
+import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 
 export const IntegrationsSection = () => {
   const autoScroll = useRef(
@@ -26,11 +27,19 @@ export const IntegrationsSection = () => {
 
   return (
     <section className="relative px-4 lg:px-0">
-      <ExportedImage className="absolute bottom-0 h-full -z-10" src="/images/backgroundGradient.webp" width="1920" height="1080" alt="section background" />
+      <ExportedImage
+        className="absolute bottom-0 h-full -z-10"
+        src="/images/backgroundGradient.webp"
+        width="1920"
+        height="1080"
+        alt="section background"
+      />
       <div className="container mx-auto grid md:grid-cols-2 gap-y-4">
-        <h2 className="text-4xl lg:text-6xl font-semibold text-gray-100">
-          <Highlight>CMS</Highlight> Integrations
-        </h2>
+        <Typewriter asChild>
+          <h2 className="text-4xl lg:text-6xl font-semibold text-gray-100">
+            <Highlight>CMS</Highlight> Integrations
+          </h2>
+        </Typewriter>
         <Carousel
           plugins={[autoScroll.current]}
           opts={{
@@ -55,11 +64,7 @@ export const IntegrationsSection = () => {
 
       <ul className="container mx-auto grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-4 [&>*]:p-5 mt-14">
         {integrations.map((integration, index) => (
-          <Card
-            key={integration.name}
-            asChild
-            style={{padding: 0}}
-          >
+          <Card key={integration.name} asChild style={{ padding: 0 }}>
             <motion.li
               key={integration.name}
               initial={{ opacity: 0, x: 100 }}
@@ -72,13 +77,17 @@ export const IntegrationsSection = () => {
               }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <a className="w-full h-full flex items-center justify-center p-5" href={integration.href} target="_blank">
-              <ExportedImage
-                src={integration.img}
-                alt={integration.name}
-                width="150"
-                height="150"
-              />
+              <a
+                className="w-full h-full flex items-center justify-center p-5"
+                href={integration.href}
+                target="_blank"
+              >
+                <ExportedImage
+                  src={integration.img}
+                  alt={integration.name}
+                  width="150"
+                  height="150"
+                />
               </a>
             </motion.li>
           </Card>

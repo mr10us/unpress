@@ -1,5 +1,5 @@
 import Tilt from "@/components/animations/Tilt/Tilt";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 import { Button } from "@/components/ui/button";
 import ExportedImage from "next-image-export-optimizer";
 

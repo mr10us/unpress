@@ -4,13 +4,16 @@ import { Highlight } from "@/components/ui/Highlight";
 import roadmap from "./roadmap.json";
 import styles from "./IntegrationRoadmapSection.module.css";
 import { motion } from "motion/react";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 
 export const IntegrationRoadmapSection = () => {
   return (
     <section className="container mx-auto px-4 lg:px-0">
-      <h2 className="mb-5">
-        Integration <Highlight>Roadmap</Highlight>
-      </h2>
+      <Typewriter asChild>
+        <h2 className="mb-5">
+          Integration <Highlight>Roadmap</Highlight>
+        </h2>
+      </Typewriter>
       <p className="text-base lg:text-2xl leading-9 text-silver">
         Seamless Integration in Just a Few Steps
       </p>
@@ -22,8 +25,11 @@ export const IntegrationRoadmapSection = () => {
           {roadmap.map((step, index) => {
             const position = index % 2 === 0 ? "top" : "bottom";
 
-            const startPositionTransition = position === "top" ? {opacity: 0, y: -100} : {opacity: 0, y: 100};
-            const endPositionTransition = {opacity: 1, y: 0};
+            const startPositionTransition =
+              position === "top"
+                ? { opacity: 0, y: -100 }
+                : { opacity: 0, y: 100 };
+            const endPositionTransition = { opacity: 1, y: 0 };
 
             return (
               <motion.li

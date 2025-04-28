@@ -9,6 +9,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import { useRef } from "react";
 import trusted from "./trusted.json";
 import { Card } from "@/components/ui/card";
+import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 
 export const TrustedSection = () => {
   const extendedTrusted = [...trusted, ...trusted];
@@ -23,7 +24,9 @@ export const TrustedSection = () => {
 
   return (
     <section className="px-4 lg:px-0">
-      <h2 className="text-center container mx-auto">Trust & Testimonials</h2>
+      <Typewriter>
+        <h2 className="text-center container mx-auto">Trust & Testimonials</h2>
+      </Typewriter>
       <p className="text-center text-base lg:text-2xl leading-9 text-silver container mx-auto">
         Trusted by innovative media companies worldwide.
       </p>
@@ -41,7 +44,11 @@ export const TrustedSection = () => {
               key={index}
               className="basis-1/2 md:basis-1/3 lg:basis-1/4 ml-4 h-40 w-20 text-6xl text-gray-100"
             >
-              <Card asChild className="w-full h-full block !bg-white" style={{padding: 0}}>
+              <Card
+                asChild
+                className="w-full h-full block !bg-white"
+                style={{ padding: 0 }}
+              >
                 <a href={el.href} target="_blank">
                   <img
                     src={el.image}

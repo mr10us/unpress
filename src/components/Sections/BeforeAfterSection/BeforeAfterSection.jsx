@@ -1,15 +1,15 @@
 import { Highlight } from "@/components/ui/Highlight";
 import styles from "./BeforeAfterSection.module.css";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 
 export const BeforeAfterSection = () => {
   return (
     <section className="container mx-auto">
-      
-        <h2 className="mb-20 flex justify-center gap-4">
-        <Typewriter>Before & </Typewriter><Highlight><Typewriter delay={1000}>After</Typewriter></Highlight>
+      <Typewriter asChild>
+        <h2 className="mb-20 text-center">
+          Before &<Highlight> After</Highlight>
         </h2>
-      
+      </Typewriter>
 
       <div
         className={`card w-4/5 mx-auto grid lg:grid-cols-2 gap-20 ${styles.gridCard}`}

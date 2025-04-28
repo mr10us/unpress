@@ -1,7 +1,7 @@
 "use client";
 
 import { Highlight } from "@/components/ui/Highlight";
-import Typewriter from "@/components/animations/Typewriter/Typewriter";
+import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 import ExportedImage from "next-image-export-optimizer";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { _desktop } from "./_desktop.jsx";
@@ -20,13 +20,12 @@ export function FloppySection() {
         alt="section background"
       />
       <div className="container mx-auto px-4 lg:px-0">
-        <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold mb-20 flex justify-center gap-4">
-          <Highlight>
-            <Typewriter>Unpress AI</Typewriter>
-          </Highlight>
-          <Typewriter delay={100}>Solves the Critical Bottlenecks:</Typewriter>
-        </h2>
-
+        <Typewriter asChild>
+          <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold mb-20">
+            <Highlight>Unpress AI </Highlight>
+            Solves the Critical Bottlenecks:
+          </h2>
+        </Typewriter>
         {isDesktop ? <_desktop /> : <_mobile />}
       </div>
     </section>
