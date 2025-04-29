@@ -1,11 +1,15 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import { useIsTouchDevice } from "@/hooks/useIsTouchDevice";
 
 export default function Tilt({ children, maxTilt = 5, maxShift = 0, className }) {
   const ref = useRef(null);
+  const isTouchDevice = useIsTouchDevice();
 
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const handleMouseMove = (e) => {
       const container = ref.current;
       if (!container) return;
@@ -59,7 +63,7 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [maxTilt, maxShift]);
+  }, [maxTilt, maxShift, isTouchDevice]);
 
   return (
     <div
@@ -75,3 +79,4 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
     </div>
   );
 }
+

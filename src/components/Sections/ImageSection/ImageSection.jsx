@@ -11,7 +11,7 @@ import { DialogTitle } from "@radix-ui/react-dialog";
 
 export const ImageSection = () => {
   return (
-    <section className="container mx-auto px-4 lg:px-0">
+    <section className="container mx-auto px-4 lg:px-0 flex justify-center items-center">
       <Dialog>
         <DialogTrigger>
           <ExportedImage
@@ -33,6 +33,7 @@ export const ImageSection = () => {
           />
         </DialogContent>
       </Dialog>
+      
       <ExportedImage
         className="md:hidden rounded-[20px] w-full"
         src="/images/mobile.png"

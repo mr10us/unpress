@@ -27,7 +27,6 @@ export const _desktop = () => {
     gsap.set(allDisks, {
       yPercent: -100,
       opacity: 0,
-      scale: 0.95,
       position: "absolute",
       top: 0,
       left: 0,
@@ -38,7 +37,6 @@ export const _desktop = () => {
     gsap.set(lastDisk, {
       yPercent: 200,
       opacity: 0,
-      scale: 0.95,
       filter: "grayscale(1)",
       position: "absolute",
       top: 0,
@@ -50,29 +48,40 @@ export const _desktop = () => {
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=" + window.innerHeight * (total + 2),
+        end: "+=" + window.innerHeight * (total),
         scrub: true,
         pin: true,
       },
     });
 
     disks.forEach((disk, index) => {
-      const finalY = (index - 2 - (total - 1) / 2) * spacing * -1;
+      const finalY = (index - total - (total - 1) / 2) * spacing * -1;
 
       const desc = disk.querySelector("p");
       const line = disk.querySelector("div.md\\:border-r");
       const h3 = disk.querySelector("h3");
 
+      const readableSpacing = 100;
+
+      const previousDisk = index > 0 && disks[index - 1];
+      const lastDisk = index === total - 1;
+
       timeline.to(disk, {
         yPercent: 0,
-        y: finalY,
+        y: finalY - readableSpacing,
         opacity: 1,
-        scale: 1,
         filter: "grayscale(0)",
-        zIndex: total + index,
         duration: 0.5,
         ease: "power2.out",
       });
+
+      previousDisk &&
+        timeline.to(previousDisk, {
+          y: finalY,
+          filter: "grayscale(0.6)",
+          duration: 0.5,
+          ease: "power2.out",
+        });
 
       timeline.to(
         [desc, line],
@@ -95,10 +104,7 @@ export const _desktop = () => {
       );
 
       timeline.to(disk, {
-        y: finalY,
-        filter: "grayscale(0.6)",
-        scale: 0.95,
-        zIndex: total + index - 1,
+        y: finalY - spacing,
         duration: 0.5,
         ease: "power2.out",
       });
@@ -123,19 +129,30 @@ export const _desktop = () => {
         },
         "<"
       );
+      if (lastDisk) {
+        timeline.to(
+          disk,
+          {
+            yPercent: 0,
+            filter: "grayscale(0.6)",
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "<"
+        );
+      }
     });
 
     timeline.to({}, { duration: 1 });
 
     disks.forEach((disk, index) => {
       const compressedY =
-        (index - 2 - (total - 1) / 2) * compressedSpacing * -1;
+        (index - (total) - (total - 1) / 2) * compressedSpacing * -1;
 
       timeline.to(
         disk,
         {
           y: compressedY,
-          scale: 0.9,
           duration: 0.5,
           ease: "power2.inOut",
         },
@@ -143,15 +160,14 @@ export const _desktop = () => {
       );
     });
 
-    const firstFinalY = (-(total + 1) / 2 + 2) * compressedSpacing;
-    const lastFinalY = ((total + 1) / 2 + 2) * compressedSpacing;
+    const firstFinalY = (-(total + 1) / 2 + total) * compressedSpacing;
+    const lastFinalY = ((total + 1) / 2 + total) * compressedSpacing;
 
     timeline.to(
       firstDisk,
       {
         yPercent: 0,
         opacity: 1,
-        scale: 0.9,
         y: firstFinalY,
         filter: "grayscale(0)",
         zIndex: total + 11,
@@ -165,7 +181,6 @@ export const _desktop = () => {
       {
         yPercent: 0,
         opacity: 1,
-        scale: 0.9,
         y: lastFinalY,
         filter: "grayscale(0)",
         zIndex: 0,
@@ -185,6 +200,7 @@ export const _desktop = () => {
             <li
               key={`${diskImage}_${index}`}
               className="disk group flex items-center gap-5 absolute w-full"
+              style={{ zIndex: disksData.length - index + 1 }}
             >
               <ExportedImage
                 className="w-1/2"

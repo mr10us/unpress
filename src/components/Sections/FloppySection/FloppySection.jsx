@@ -11,15 +11,15 @@ export function FloppySection() {
   const isDesktop = useIsDesktop();
 
   return (
-    <section className="relative bg-black pt-40 pb-0 overflow-x-hidden isolate">
+    <section className="relative bg-black pt-40 pb-0 overflow-hidden isolate">
       <ExportedImage
-        className="absolute inset-0 h-full z-[-1]"
+        className="absolute left-1/2 -translate-x-1/2 h-full z-[-1]"
         src="/images/backgroundGradient.webp"
         width="1920"
         height="1080"
         alt="section background"
       />
-      <div className="container mx-auto px-4 lg:px-0">
+      <div className="container mx-auto lg:grid lg:grid-cols-[1fr_2fr] items-center px-4 lg:px-0">
         <Typewriter asChild>
           <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold mb-20">
             <Highlight>Unpress AI </Highlight>
