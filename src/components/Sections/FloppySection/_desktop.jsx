@@ -202,11 +202,11 @@ export const _desktop = () => {
           return (
             <li
               key={`${diskImage}_${index}`}
-              className="disk group flex items-center gap-5 absolute w-full will-change-[filter,transform]"
+              className="disk group grid grid-cols-2 items-center gap-5 absolute w-full will-change-[filter,transform]"
               style={{ zIndex: disksData.length - index + 1 }}
             >
               <ExportedImage
-                className="w-1/2"
+                className="w-full"
                 src={diskImage}
                 width="400"
                 height="235"
