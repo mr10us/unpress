@@ -1,5 +1,5 @@
 import ExportedImage from "next-image-export-optimizer";
-import { Button } from "../ui/button";
+import { EmailForm } from "./EmailForm";
 
 export const Footer = () => {
   return (
@@ -14,7 +14,7 @@ export const Footer = () => {
               cost-effective.
             </p>
           </a>
-          
+          <EmailForm />
           <div className="grid grid-cols-2 md:flex md:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
             <a href="tel:+380737337377">+38 073 733 73 77</a>
             <a className="underline" href="mailto:seo@unpress.ai.com">
