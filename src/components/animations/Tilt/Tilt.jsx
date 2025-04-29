@@ -1,18 +1,42 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, forwardRef } from "react";
 import { useIsTouchDevice } from "@/hooks/useIsTouchDevice";
 
-export default function Tilt({ children, maxTilt = 5, maxShift = 0, className }) {
-  const ref = useRef(null);
+function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
+  const wrapperRef = useRef(null);
   const isTouchDevice = useIsTouchDevice();
+  const observerRef = useRef(null);
+  const isInView = useRef(false);
+
+  useEffect(() => {
+    if (!refTarget?.current) return;
+
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        isInView.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+
+    observerRef.current.observe(refTarget.current);
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [refTarget]);
 
   useEffect(() => {
     if (isTouchDevice) return;
+    if (!refTarget?.current || !wrapperRef.current) return;
+
+    const container = refTarget.current;
+    const tiltElement = wrapperRef.current;
 
     const handleMouseMove = (e) => {
-      const container = ref.current;
-      if (!container) return;
+      if (!isInView.current) return;
 
       const rect = container.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
@@ -21,7 +45,7 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
       const offsetX = e.clientX - centerX;
       const offsetY = e.clientY - centerY;
 
-      const percentX = offsetX / (rect.width / 2); // -1 to 1
+      const percentX = offsetX / (rect.width / 2);
       const percentY = offsetY / (rect.height / 2);
 
       const rotateX = Math.max(-maxTilt, Math.min(maxTilt, -percentY * maxTilt));
@@ -30,7 +54,7 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
       const translateX = Math.max(-maxShift, Math.min(maxShift, percentX * maxShift));
       const translateY = Math.max(-maxShift, Math.min(maxShift, percentY * maxShift));
 
-      container.style.transform = `
+      tiltElement.style.transform = `
         perspective(1000px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
@@ -40,20 +64,19 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
     };
 
     const handleMouseLeave = () => {
-      const container = ref.current;
-      if (container) {
-        container.style.transition = "transform 0.3s ease";
-        container.style.transform = `
-          perspective(1000px)
-          rotateX(0deg)
-          rotateY(0deg)
-          translateX(0px)
-          translateY(0px)
-        `;
-        setTimeout(() => {
-          if (container) container.style.transition = "";
-        }, 300);
-      }
+      if (!isInView.current) return;
+
+      tiltElement.style.transition = "transform 0.3s ease";
+      tiltElement.style.transform = `
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        translateX(0px)
+        translateY(0px)
+      `;
+      setTimeout(() => {
+        if (tiltElement) tiltElement.style.transition = "";
+      }, 300);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -63,20 +86,21 @@ export default function Tilt({ children, maxTilt = 5, maxShift = 0, className })
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [maxTilt, maxShift, isTouchDevice]);
+  }, [refTarget, maxTilt, maxShift, isTouchDevice]);
 
   return (
     <div
-      ref={ref}
+      ref={wrapperRef}
+      className={className}
       style={{
         display: "inline-block",
         willChange: "transform",
         transition: "transform 0.1s ease-out",
       }}
-      className={className}
     >
       {children}
     </div>
   );
 }
 
+export default Tilt;

@@ -51,6 +51,8 @@ export const _desktop = () => {
         end: "+=" + window.innerHeight * (total),
         scrub: true,
         pin: true,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
       },
     });
 

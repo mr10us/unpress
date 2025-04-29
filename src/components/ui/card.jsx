@@ -7,7 +7,7 @@ function Card({ className, asChild = false, ...props }) {
   const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
   useIntersectionObserver(ref, () => {
-    setTimeout(() => setLoaded(true), 3000);
+    setTimeout(() => setLoaded(true), 2000);
   });
 
   const Comp = asChild ? Slot : "div";

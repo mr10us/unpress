@@ -1,11 +1,15 @@
+"use client";
+
 import Tilt from "@/components/animations/Tilt/Tilt";
 import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
 import ExportedImage from "next-image-export-optimizer";
 import styles from "./ImpactSection.module.css"
+import { useRef } from "react";
 
 export const ImpactSection = () => {
+  const tiltRef = useRef(null);
   return (
-    <section className="overflow-hidden relative container mx-auto px-4 ">
+    <section ref={tiltRef} className="overflow-hidden relative container mx-auto px-4 ">
       <div className={`${styles.gradient} absolute w-full h-[300px] rounded-full rotate-45 left-1/2 -translate-x-1/2 blur-[25px] lg:blur-[200px]`}></div>
       <Typewriter asChild>
         <h2 className="mb-20">Impact in Numbers</h2>
@@ -23,7 +27,7 @@ export const ImpactSection = () => {
               <p>on news production costs</p>
             </Typewriter>
           </div>
-          <Tilt maxShift={10}>
+          <Tilt refTarget={tiltRef} maxShift={10}>
             <ExportedImage
               src="/images/impacts/impact_1.svg"
               width="700"
@@ -37,7 +41,7 @@ export const ImpactSection = () => {
               Publish
             </h3>
           </Typewriter>
-          <Tilt maxShift={10} className="mb-4 md:mb-0 md:col-start-1 md:row-start-1 self-end">
+          <Tilt refTarget={tiltRef} maxShift={10} className="mb-4 md:mb-0 md:col-start-1 md:row-start-1 self-end">
             <ExportedImage
               src="/images/impacts/impact_2.svg"
               width="700"
