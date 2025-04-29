@@ -1,18 +1,27 @@
+"use client";
+
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
-import { useState, useRef } from "react";
-import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 function Card({ className, asChild = false, ...props }) {
-  const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
-  useIntersectionObserver(ref, () => {
-    setTimeout(() => setLoaded(true), 2000);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
-  const Comp = asChild ? Slot : "div";
+  useEffect(() => {
+    if (inView) {
+      const timeout = setTimeout(() => setLoaded(true), 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [inView]);
 
+  const Comp = asChild ? Slot : "div";
   const delay = (Math.random() * 2).toFixed(2);
+
   return (
     <Comp
       data-slot="div"

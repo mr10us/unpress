@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import { useInView } from "react-intersection-observer";
 import setupTypewriter from "./helper";
 
 export function Typewriter({
@@ -10,16 +10,16 @@ export function Typewriter({
   delay = 0,
   asChild = false,
 }) {
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useIntersectionObserver(ref, () => setIsVisible(true));
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
 
   useEffect(() => {
-    if (isVisible && ref.current) {
+    if (inView && ref.current) {
       setupTypewriter(ref.current, delay).start();
     }
-  }, [isVisible]);
+  }, [inView]);
 
   const Comp = asChild ? Slot : "span";
 

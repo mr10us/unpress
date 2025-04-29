@@ -12,7 +12,7 @@ export const _mobile = () => {
   const [openItem, setOpenItem] = useState("item-0");
 
   return (
-    <ul className="relative w-full h-full">
+    <div className="relative w-full h-full">
       <Accordion
         type="single"
         collapsible
@@ -20,24 +20,28 @@ export const _mobile = () => {
         onValueChange={(value) => setOpenItem(value)}
       >
         {disks.map((disk, index) => (
-          <li key={index} className="text-gray-100">
-            <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger>
-                <h3
-                  className={`font-semibold text-lg ${
-                    openItem === `item-${index}` ? "text-primary" : "text-gray-100"
-                  }`}
-                >
-                  {disk.name}
-                </h3>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-sm">{disk.desc}</p>
-              </AccordionContent>
-            </AccordionItem>
-          </li>
+          <AccordionItem
+            value={`item-${index}`}
+            className="text-gray-100"
+            key={index}
+          >
+            <AccordionTrigger>
+              <h3
+                className={`font-semibold text-lg ${
+                  openItem === `item-${index}`
+                    ? "text-primary"
+                    : "text-gray-100"
+                }`}
+              >
+                {disk.name}
+              </h3>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-sm">{disk.desc}</p>
+            </AccordionContent>
+          </AccordionItem>
         ))}
       </Accordion>
-    </ul>
+    </div>
   );
 };

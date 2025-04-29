@@ -46,11 +46,7 @@ export const IntegrationRoadmapSection = () => {
             const itemVariants = {
               hidden: {
                 opacity: 0,
-                y: isDesktop
-                  ? position === "top"
-                    ? -100
-                    : 100
-                  : 100,
+                y: !isDesktop ? (position === "top" ? -100 : 100) : 100,
               },
               visible: {
                 opacity: 1,
