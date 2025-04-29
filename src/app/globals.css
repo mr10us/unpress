@@ -195,6 +195,10 @@ header {
     @apply py-20 overflow-x-hidden;
   }
 
+  section[aria-label*="Notifications"] {
+    @apply py-0;
+  }
+
   section > h2 {
     @apply text-4xl lg:text-6xl font-semibold text-gray-100;
   }
