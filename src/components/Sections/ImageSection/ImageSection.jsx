@@ -26,7 +26,7 @@ export const ImageSection = () => {
             <DialogTitle>Close up image</DialogTitle>
           </DialogHeader>
           <ExportedImage
-            className="h-full w-auto mx-auto object-contain rounded-2xl"
+            className="w-auto mx-auto object-contain rounded-2xl"
             src="/images/desktop_close.png"
             width="1280"
             height="680"
