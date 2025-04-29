@@ -27,7 +27,7 @@ export const ImpactSection = () => {
               <p>on news production costs</p>
             </Typewriter>
           </div>
-          <Tilt refTarget={tiltRef} maxShift={10}>
+          <Tilt refTarget={tiltRef}>
             <ExportedImage
               src="/images/impacts/impact_1.svg"
               width="700"
@@ -37,11 +37,11 @@ export const ImpactSection = () => {
         </li>
         <li className="md:grid grid-cols-[auto_1fr] lg:grid-cols-2 grid-rows-[200px] gap-4">
           <Typewriter asChild>
-            <h3 className="text-primary col-start-1 row-start-1 -mb-8">
+            <h3 className="text-primary col-start-1 row-start-1">
               Publish
             </h3>
           </Typewriter>
-          <Tilt refTarget={tiltRef} maxShift={10} className="mb-4 md:mb-0 md:col-start-1 md:row-start-1 self-end">
+          <Tilt refTarget={tiltRef} className="mb-4 md:mb-0 md:col-start-1 md:row-start-1 self-end">
             <ExportedImage
               src="/images/impacts/impact_2.svg"
               width="700"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, forwardRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useIsTouchDevice } from "@/hooks/useIsTouchDevice";
 
 function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
@@ -58,8 +58,8 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
         perspective(1000px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
-        translateX(${translateX}px)
-        translateY(${translateY}px)
+        translate3d(${translateX}px, 0px, 0px)
+        translate3d(0px, ${translateY}px, 0px)
       `;
     };
 
@@ -71,20 +71,20 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
         perspective(1000px)
         rotateX(0deg)
         rotateY(0deg)
-        translateX(0px)
-        translateY(0px)
+        translate3d(0px, 0px, 0px)
+        translate3d(0px, 0px, 0px)
       `;
       setTimeout(() => {
         if (tiltElement) tiltElement.style.transition = "";
       }, 300);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [refTarget, maxTilt, maxShift, isTouchDevice]);
 

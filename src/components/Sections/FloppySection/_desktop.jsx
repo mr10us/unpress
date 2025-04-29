@@ -52,7 +52,8 @@ export const _desktop = () => {
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
-        anticipatePin: 1,
+        // onLeave: self => self.disable(),
+        // onEnterBack: self => self.enable(),
       },
     });
 
@@ -201,7 +202,7 @@ export const _desktop = () => {
           return (
             <li
               key={`${diskImage}_${index}`}
-              className="disk group flex items-center gap-5 absolute w-full"
+              className="disk group flex items-center gap-5 absolute w-full will-change-[filter,transform]"
               style={{ zIndex: disksData.length - index + 1 }}
             >
               <ExportedImage

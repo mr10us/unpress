@@ -3,54 +3,71 @@
 import { Highlight } from "@/components/ui/Highlight";
 import roadmap from "./roadmap.json";
 import styles from "./IntegrationRoadmapSection.module.css";
-import { motion } from "motion/react";
-import { Typewriter }  from "@/components/animations/Typewriter/Typewriter";
+import { motion } from "framer-motion";
+import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 export const IntegrationRoadmapSection = () => {
   const isDesktop = useIsDesktop();
 
+  // Варианты для всей ul
+  const listVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
-    <section className="container mx-auto px-4 ">
+    <section className="container mx-auto px-4">
       <Typewriter asChild>
         <h2 className="mb-5">
           Integration <Highlight>Roadmap</Highlight>
         </h2>
       </Typewriter>
+
       <p className="text-base lg:text-2xl leading-9 text-silver">
         Seamless Integration in Just a Few Steps
       </p>
 
       <div className={`w-full relative ${styles.listContainer}`}>
-        <ul
+        <motion.ul
           className={`grid ${styles.list} grid-cols-1 gap-5 md:grid-cols-5 mx-auto container`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={listVariants}
         >
           {roadmap.map((step, index) => {
             const position = index % 2 === 0 ? "top" : "bottom";
 
-            const startPositionTransition =
-              position === "top"
-                ? { opacity: 0, y: -100 }
-                : { opacity: 0, y: 100 };
-            const endPositionTransition = { opacity: 1, y: 0 };
-
-            if (!isDesktop) {
-              startPositionTransition.y = 100;
-            }
+            const itemVariants = {
+              hidden: {
+                opacity: 0,
+                y: isDesktop
+                  ? position === "top"
+                    ? -100
+                    : 100
+                  : 100,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                  duration: 1.5,
+                },
+              },
+            };
 
             return (
               <motion.li
                 key={step.name}
-                initial={startPositionTransition}
-                whileInView={endPositionTransition}
-                transition={{
-                  delay: index * 0.3,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                  duration: 2,
-                }}
-                viewport={{ once: true, amount: "all" }}
+                variants={itemVariants}
                 className={`grid grid-cols-[auto_1fr] gap-5 md:flex items-center md:justify-between border-gray-100 md:col-start-[var(--grid-position)] ${
                   position === "top" ? styles.top : styles.bottom
                 }`}
@@ -62,7 +79,7 @@ export const IntegrationRoadmapSection = () => {
               </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </div>
     </section>
   );
