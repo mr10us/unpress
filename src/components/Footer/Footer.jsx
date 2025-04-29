@@ -30,7 +30,7 @@ export const Footer = () => {
             </div>
           </form>
           <div className="grid grid-cols-2 md:flex md:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
-            <a href="tel:+380999999999">+38 000 000 00</a>
+            <a href="tel:+380737337377">+38 073 733 73 77</a>
             <a className="underline" href="mailto:seo@unpress.ai.com">
               seo@unpress.ai.com
             </a>
