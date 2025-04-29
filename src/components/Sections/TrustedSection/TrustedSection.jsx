@@ -23,7 +23,7 @@ export const TrustedSection = () => {
   );
 
   return (
-    <section className="px-4 lg:px-0">
+    <section className="px-4 ">
       <Typewriter>
         <h2 className="text-center container mx-auto">Trust & Testimonials</h2>
       </Typewriter>

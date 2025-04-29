@@ -5,7 +5,7 @@ import styles from "./ImpactSection.module.css"
 
 export const ImpactSection = () => {
   return (
-    <section className="overflow-hidden relative container mx-auto px-4 lg:px-0">
+    <section className="overflow-hidden relative container mx-auto px-4 ">
       <div className={`${styles.gradient} absolute w-full h-[300px] rounded-full rotate-45 left-1/2 -translate-x-1/2 blur-[25px] lg:blur-[200px]`}></div>
       <Typewriter asChild>
         <h2 className="mb-20">Impact in Numbers</h2>

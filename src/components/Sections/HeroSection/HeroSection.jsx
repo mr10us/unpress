@@ -11,7 +11,7 @@ import { motion } from "motion/react";
 export const HeroSection = () => {
   return (
     <section className="xl:h-screen pt-[150px] bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] overflow-hidden">
-      <div className="container px-4 lg:px-0 mx-auto h-full flex gap-32">
+      <div className="container px-4  mx-auto h-full flex gap-32">
         <div className="flex flex-col justify-center h-full w-full">
           <Typewriter asChild>
             <h1 className="text-gray-100 font-semibold text-6xl lg:text-[80px] leading-tight mb-10">

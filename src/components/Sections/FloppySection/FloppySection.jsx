@@ -19,9 +19,9 @@ export function FloppySection() {
         height="1080"
         alt="section background"
       />
-      <div className="container mx-auto lg:grid lg:grid-cols-[1fr_2fr] items-center px-4 lg:px-0">
+      <div className="container mx-auto lg:grid lg:grid-cols-[1fr_2fr] lg:gap-10 items-center px-4 ">
         <Typewriter asChild>
-          <h2 className="text-gray-100 text-4xl lg:text-6xl font-semibold mb-20">
+          <h2 className="text-gray-100 text-4xl lg:text-6xl lg:mt-[80%] xl:mb-[50%] font-semibold mb-20 transition">
             <Highlight>Unpress AI </Highlight>
             Solves the Critical Bottlenecks:
           </h2>

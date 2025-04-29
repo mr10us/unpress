@@ -5,7 +5,7 @@ import ExportedImage from "next-image-export-optimizer";
 
 export const FinalSection = () => {
   return (
-    <section className="container mx-auto grid [&_div]:col-start-1 [&_div]:row-start-1 md:[&_div]:col-start-auto md:[&_div]:row-start-auto md:grid-cols-2 gap-20 pb-0 px-4 lg:px-0">
+    <section className="container mx-auto grid [&_div]:col-start-1 [&_div]:row-start-1 md:[&_div]:col-start-auto md:[&_div]:row-start-auto md:grid-cols-2 gap-20 pb-0 px-4 ">
       <div className="flex flex-col items-start md:justify-center z-10 mb-10 md:mb-0">
         <Typewriter asChild>
           <h2 className="font-semibold text-4xl lg:text-6xl leading-tight text-gray-100 mb-9">

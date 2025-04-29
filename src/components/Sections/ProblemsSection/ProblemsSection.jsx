@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 
 export const ProblemsSection = () => {
   return (
-    <section className="container mx-auto px-4 lg:px-0">
+    <section className="container mx-auto px-4 ">
       <Typewriter asChild>
         <h2 className="mb-5 flex gap-4">
           Time is Money.

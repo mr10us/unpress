@@ -26,7 +26,7 @@ export const IntegrationsSection = () => {
   );
 
   return (
-    <section className="relative px-4 lg:px-0">
+    <section className="relative px-4 ">
       <ExportedImage
         className="absolute bottom-0 h-full -z-10"
         src="/images/backgroundGradient.webp"
