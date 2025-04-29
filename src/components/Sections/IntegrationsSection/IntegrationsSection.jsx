@@ -19,8 +19,6 @@ export const IntegrationsSection = () => {
   const autoScroll = useRef(
     AutoScroll({
       speed: 1,
-      stopOnFocusIn: true,
-      stopOnMouseEnter: true,
       stopOnInteraction: false,
     })
   );
