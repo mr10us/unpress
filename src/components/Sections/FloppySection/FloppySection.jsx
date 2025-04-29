@@ -21,7 +21,7 @@ export function FloppySection() {
       />
       <div className="container mx-auto lg:grid lg:grid-cols-[1fr_2fr] lg:gap-10 items-center px-4 ">
         <Typewriter asChild>
-          <h2 className="text-gray-100 text-4xl lg:text-6xl lg:mt-[80%] xl:mb-[50%] font-semibold mb-20 transition">
+          <h2 className="text-gray-100 text-4xl lg:text-6xl lg:mb-[80%] xl:mb-[50%] font-semibold mb-20 transition">
             <Highlight>Unpress AI </Highlight>
             Solves the Critical Bottlenecks:
           </h2>
