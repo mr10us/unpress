@@ -33,7 +33,7 @@ export const ImpactSection = () => {
         </li>
         <li className="md:grid grid-cols-[auto_1fr] lg:grid-cols-2 grid-rows-[200px] gap-4">
           <Typewriter asChild>
-            <h3 className="text-primary md:col-start-1 md:row-start-1">
+            <h3 className="text-primary col-start-1 row-start-1 sm:-mb-8">
               Publish
             </h3>
           </Typewriter>
