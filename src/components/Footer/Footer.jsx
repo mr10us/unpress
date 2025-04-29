@@ -14,21 +14,7 @@ export const Footer = () => {
               cost-effective.
             </p>
           </a>
-          <form action="" className="justify-self-center text-center lg:text-start">
-            <h3 className="text-gray-100 text-2xl font-semibold">
-              We invite you to cooperate!
-            </h3>
-            <p className="text-gray-100 text-xs mb-5">Leave your email</p>
-
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="example@example.com"
-                className="text-gray-100 w-full lg:w-[200px] text-xs px-4 rounded-r-none rounded-l-[20px] border-[#515151] border-r-0 border p"
-              />
-              <Button className="rounded-l-none border border-primary rounded-r-[20px]">Send</Button>
-            </div>
-          </form>
+          
           <div className="grid grid-cols-2 md:flex md:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
             <a href="tel:+380737337377">+38 073 733 73 77</a>
             <a className="underline" href="mailto:seo@unpress.ai.com">
