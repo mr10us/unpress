@@ -74,6 +74,7 @@ export const StepsSection = () => {
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
+            aria-label="select step"
             onClick={() => api?.scrollTo(index)}
             className={`cursor-pointer h-2.5 rounded-[10px] transition-all ${
               index === selectedIndex ? "bg-primary w-20" : "bg-gray-100 w-10"

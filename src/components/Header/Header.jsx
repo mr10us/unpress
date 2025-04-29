@@ -7,8 +7,8 @@ export const Header = () => {
     <header className="fixed top-0 lg:top-10 w-full z-50">
       <div className="backdrop-filter backdrop-blur-xs lg:rounded-xl container mx-auto bg-[#FFFFFF0a]">
         <div className="grid grid-cols-2 lg:grid-cols-[auto_1fr_1fr] py-7 px-4 items-center gap-4 lg:gap-24 container mx-auto">
-          <a href="/" className="w-20 md:w-full">
-            <ExportedImage src="/images/logo.svg" width="130" height="34" />
+          <a href="/" className="w-20 md:w-full" aria-label="home link">
+            <ExportedImage src="/images/logo.svg" width="130" height="34" alt="logo image" />
           </a>
           <nav className="h-fit justify-self-start hidden lg:block">
             <ul className="flex gap-4 text-gray-100 text-base">

@@ -19,6 +19,7 @@ export const ImageSection = () => {
             src="/images/desktop.png"
             width="1280"
             height="680"
+            alt="example image"
           />
         </DialogTrigger>
         <DialogContent className="border-none text-gray-100 md:max-w-10/12 h-11/12">
