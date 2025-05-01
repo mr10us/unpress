@@ -6,7 +6,6 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import steps from "./steps.json";
 import styles from "./StepsSection.module.css";
@@ -40,11 +39,6 @@ export const StepsSection = () => {
 
       <Carousel
         className="container mx-auto px-4  mr-[calc((100vw-100%)_/_2)] w-full"
-        plugins={[
-          Autoplay({
-            delay: 20000,
-          }),
-        ]}
         setApi={setApi}
         opts={{
           loop: true,
