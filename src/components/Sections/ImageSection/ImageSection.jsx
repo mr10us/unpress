@@ -34,13 +34,13 @@ export const ImageSection = () => {
           />
         </DialogContent>
       </Dialog>
-      
-      <ExportedImage
-        className="md:hidden rounded-[20px] w-full"
-        src="/images/mobile.png"
-        width="375"
-        height="667"
-      />
+
+        <ExportedImage
+          className="md:hidden rounded-[20px] w-full"
+          src="/images/mobile.png"
+          width="375"
+          height="667"
+        />
     </section>
   );
 };

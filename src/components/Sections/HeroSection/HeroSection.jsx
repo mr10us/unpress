@@ -46,6 +46,7 @@ export const HeroSection = () => {
               stiffness: 100,
               damping: 12,
             }}
+            viewport={{ once: true }}
           >
             <Button
               asChild

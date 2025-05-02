@@ -32,6 +32,7 @@
   content: counter(cards, decimal-leading-zero);
   font-size: 253px;
   position: absolute;
+  font-family: sans-serif;
   z-index: -1;
   top: 0.5rem;
   -webkit-text-stroke: 1px var(--color-primary);
