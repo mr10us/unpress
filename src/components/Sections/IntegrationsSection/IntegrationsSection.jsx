@@ -24,9 +24,9 @@ export const IntegrationsSection = () => {
   );
 
   return (
-    <section className="relative px-4 ">
+    <section className="relative px-4">
       <ExportedImage
-        className="absolute bottom-0 h-full -z-10"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full -z-10"
         src="/images/backgroundGradient.webp"
         width="1920"
         height="1080"
@@ -38,22 +38,14 @@ export const IntegrationsSection = () => {
             <Highlight>CMS</Highlight> Integrations
           </h2>
         </Typewriter>
-        <Carousel
-          plugins={[autoScroll.current]}
-          opts={{
-            loop: true,
-          }}
-          className={`flex items-center row-start-1 md:row-auto ${styles.marqueeContainer}`}
-        >
-          <CarouselContent>
-            <CarouselItem className={`basis-full ${styles.marquee}`}>
-              Your newsroom, upgraded — without disruption.
-            </CarouselItem>
-            <CarouselItem className={`basis-full ${styles.marquee}`}>
-              Your newsroom, upgraded — without disruption.
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+        <div className="marquee text-lg text-primary">
+          <div className="marquee__content">
+            <p>Your newsroom, upgraded — without disruption.</p>
+          </div>
+          <div className="marquee__content" aria-hidden="true">
+            <p>Your newsroom, upgraded — without disruption.</p>
+          </div>
+        </div>
 
         <p className="text-silver text-base lg:text-2xl leading-9 md:col-span-2">
           Seamless Integration with Leading CMS Platforms

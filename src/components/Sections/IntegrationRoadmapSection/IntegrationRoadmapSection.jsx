@@ -3,7 +3,7 @@
 import { Highlight } from "@/components/ui/Highlight";
 import roadmap from "./roadmap.json";
 import styles from "./IntegrationRoadmapSection.module.css";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 

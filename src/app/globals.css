@@ -307,3 +307,29 @@ header {
   font-size: var(--text-md);
   line-height: 1.5;
 }
+
+
+
+.marquee {
+  display: flex;
+  gap: 2rem;
+  user-select: none;
+
+  overflow: hidden;
+}
+.marquee__content {
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate3d(calc(-100% - 2rem), 0, 0);
+  }
+}
