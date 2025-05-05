@@ -3,19 +3,14 @@ export const generateNews = async (subject) => {
   const token = btoa(currentDate);
 
   try {
-    const response = await fetch(
-      "demo.unpressai.cloud/api/generate-article",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Auth-Token": token,
-        },
+    const response = await fetch("https://demo.unpressai.cloud/api/generate-article", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Auth-Token": token,
       },
-      {
-        body: JSON.stringify({ subject }),
-      }
-    );
+      body: JSON.stringify({ subject }),
+    });
 
     if (!response.ok) {
       throw new Error("Fetch error");
