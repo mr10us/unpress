@@ -4,7 +4,7 @@ export const generateNews = async (subject) => {
 
   try {
     const response = await fetch(
-      "/api/generate",
+      "demo.unpressai.cloud/api/generate-article",
       {
         method: "POST",
         headers: {

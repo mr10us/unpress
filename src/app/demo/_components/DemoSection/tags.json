@@ -1,10 +1,11 @@
 [
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" },
-  { "name": "Tagline" }
+  { "name": "culture" },
+  { "name": "economy" },
+  { "name": "health" },
+  { "name": "politics" },
+  { "name": "science" },
+  { "name": "sport" },
+  { "name": "tech" },
+  { "name": "vehicles" },
+  { "name": "weather" }
 ]

@@ -44,9 +44,9 @@ export const DemoSection = () => {
     try {
       const response = await generateNews(subject);
 
-      if (response.success) {
+      if (response.title) {
         stopTimer();
-        setResult(response.data);
+        setResult(response);
       } else {
         toast.error(response.message || "Unknown error occurred.");
       }
