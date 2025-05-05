@@ -15,7 +15,8 @@ export const Result = ({ title, content, addedAt, origin }) => {
           <p>{formatedTime}</p>
           <h3 className="text-3xl">{title}</h3>
           <div dangerouslySetInnerHTML={{ __html: content }} />
-          <a href={origin} className="underline" target="_blank">Origin</a>
+          <p>Origin: 
+          <a href={origin} className="underline" target="_blank">{origin}</a></p>
         </div>
       </Typewriter>
     </div>
