@@ -38,7 +38,7 @@ export const StepsSection = () => {
       </Typewriter>
 
       <Carousel
-        className="container mx-auto px-4  mr-[calc((100vw-100%)_/_2)] w-full"
+        className="container mx-auto px-4 w-full"
         setApi={setApi}
         opts={{
           loop: true,

@@ -22,6 +22,7 @@
   -webkit-text-stroke: 1px var(--color-primary);
   -webkit-text-fill-color: transparent;
   font-size: 57px;
+  user-select: none;
 }
 .card > span {
   grid-row: 2;
