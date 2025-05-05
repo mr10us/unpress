@@ -11,6 +11,7 @@ gsap.registerPlugin(SplitText);
 export function Typewriter({
   children,
   delay = 0,
+  speed = null,
   asChild = false,
 }) {
   const elementRef = useRef(null);
@@ -37,7 +38,8 @@ export function Typewriter({
         const chars = split.chars;
         const totalChars = chars.length;
 
-        const stagger = 1.5 / totalChars;
+        const stagger = speed === "default" ? 0.005 : 1.5 / totalChars;
+        
 
         gsap.from(split.chars, {
           y: 0,
