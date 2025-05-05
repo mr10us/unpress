@@ -1,5 +1,5 @@
 export const generateNews = async (subject) => {
-  const currentDate = new Date().toISOString();
+  const currentDate = new Date().toUTCString();
   const token = btoa(currentDate);
 
   try {
