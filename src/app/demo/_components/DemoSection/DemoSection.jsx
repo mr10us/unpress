@@ -114,6 +114,7 @@ export const DemoSection = () => {
                   title={result.title}
                   content={result.content}
                   addedAt={result.origin.added_at}
+                  origin={result.origin.url}
                 />
               </motion.div>
 

@@ -1,6 +1,6 @@
 import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 
-export const Result = ({ title, content, addedAt }) => {
+export const Result = ({ title, content, addedAt, origin }) => {
   const formatedTime = new Date(addedAt).toGMTString()
   return (
     <div>
@@ -15,6 +15,7 @@ export const Result = ({ title, content, addedAt }) => {
           <p>{formatedTime}</p>
           <h3 className="text-3xl">{title}</h3>
           <div dangerouslySetInnerHTML={{ __html: content }} />
+          <a href={origin} className="underline" target="_blank">Origin</a>
         </div>
       </Typewriter>
     </div>
