@@ -1,23 +1,69 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Stopwatch } from "../Stopwatch/Stopwatch";
 import { Tag } from "../Tag/Tag";
 import tags from "./tags.json";
-import ExportedImage from "next-image-export-optimizer";
 import { HeroGeometry } from "@/components/Geometry/HeroGeometry";
 import { Button } from "@/components/ui/button";
+import { generateNews } from "./api";
+import { toast } from "sonner";
+import { Result } from "../Result/Result";
+import { AnimatePresence, motion } from "motion/react";
 
 export const DemoSection = () => {
   const stopwatchRef = useRef();
+  const resultRef = useRef();
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleStart = () => {
-    stopwatchRef.current?.start();
-  };
-
-  const handleStop = () => {
+  const stopTimer = () => {
     stopwatchRef.current?.stop();
   };
+  const startTimer = () => {
+    stopwatchRef.current?.start();
+  };
+  const resetTimer = () => {
+    stopwatchRef.current?.reset();
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const subject = formData.get("subject");
+
+    if (!subject) {
+      toast.error("Please enter a subject.");
+      return;
+    }
+
+    startTimer();
+    setLoading(true);
+
+    try {
+      const response = await generateNews(subject);
+
+      if (response.success) {
+        stopTimer();
+        setResult(response.data);
+      } else {
+        toast.error(response.message || "Unknown error occurred.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred while generating news.");
+    } finally {
+      setLoading(false);
+      stopTimer();
+    }
+  };
+
+  useEffect(() => {
+    if (resultRef.current) {
+      resultRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [result])
 
   return (
     <section className="relative xl:min-h-screen pt-[200px] pb-0 bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] overflow-hidden isolate">
@@ -31,21 +77,37 @@ export const DemoSection = () => {
         </div>
         <p>Select one of those news tags:</p>
 
-        <div className="flex gap-4 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar pb-4">
-          {tags.map((tag, index) => (
-            <Tag key={index} className="snap-center">
-              {tag.name}
-            </Tag>
-          ))}
-        </div>
+        <form onSubmit={handleSubmit} className="w-full">
+          <div className="flex gap-4 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar pb-4">
+            {tags.map((tag, index) => (
+              <Tag key={index} className="snap-center" onChange={resetTimer}>
+                {tag.name}
+              </Tag>
+            ))}
+          </div>
 
-        <Button
-          size="lg"
-          className="rounded-[50px] px-15 block mx-auto mt-4 bg-primary"
-          onClick={handleStart}
-        >
-          Generate
-        </Button>
+          <Button
+            size="lg"
+            type="submit"
+            className="rounded-[50px] px-15 block mx-auto mt-4 bg-primary"
+            onClick={resetTimer}
+            disabled={loading}
+          >
+            Generate
+          </Button>
+        </form>
+        <AnimatePresence>
+          {result && (
+            <motion.div
+              ref={resultRef}
+              initial={{ opacity: 0.4, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0.4, y: -100 }}
+            >
+              <Result title={result.title} content={result.content} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
