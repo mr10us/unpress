@@ -80,7 +80,7 @@ export const DemoSection = () => {
         <form onSubmit={handleSubmit} className="w-full">
           <div className="flex gap-4 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar pb-4">
             {tags.map((tag, index) => (
-              <Tag key={index} className="snap-center" onChange={resetTimer}>
+              <Tag key={index} className="snap-center" onChange={resetTimer} value={tag.name}>
                 {tag.name}
               </Tag>
             ))}

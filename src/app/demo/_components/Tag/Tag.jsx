@@ -8,8 +8,8 @@ export const Tag = ({ children, checked, onChange, ...props }) => {
         props.className
       )}
     >
-      <input type="radio" name="subject" hidden checked={checked} onChange={onChange} />
-      <span className="text-base text-gray-100">{children}</span>
+      <input type="radio" name="subject" value={props.value} hidden checked={checked} onChange={onChange} />
+      <span className="text-base text-gray-100 capitalize">{children}</span>
     </label>
   );
 };
