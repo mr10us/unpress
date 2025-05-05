@@ -10,6 +10,7 @@ import { generateNews } from "./api";
 import { toast } from "sonner";
 import { Result } from "../Result/Result";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 export const DemoSection = () => {
   const stopwatchRef = useRef();
@@ -63,7 +64,7 @@ export const DemoSection = () => {
     if (resultRef.current) {
       resultRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [result])
+  }, [result]);
 
   return (
     <section className="relative xl:min-h-screen pt-[200px] pb-0 bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] overflow-hidden isolate">
@@ -72,15 +73,19 @@ export const DemoSection = () => {
         <h1 className="text-gray-100 text-center w-full lg:w-4/5 mx-auto font-semibold text-4xl md:text-6xl lg:text-6xl lg:text-[80px] leading-tight mb-10">
           Test the fastest news generation right now!
         </h1>
-        <div className="text-gray-100">
+        <div className="text-gray-100 mb-6">
           <Stopwatch ref={stopwatchRef} />
         </div>
-        <p>Select one of those news tags:</p>
 
         <form onSubmit={handleSubmit} className="w-full">
           <div className="flex gap-4 w-full overflow-x-scroll snap-x snap-mandatory no-scrollbar pb-4">
             {tags.map((tag, index) => (
-              <Tag key={index} className="snap-center" onChange={resetTimer} value={tag.name}>
+              <Tag
+                key={index}
+                className="snap-center"
+                onChange={resetTimer}
+                value={tag.name}
+              >
                 {tag.name}
               </Tag>
             ))}
@@ -89,7 +94,7 @@ export const DemoSection = () => {
           <Button
             size="lg"
             type="submit"
-            className="rounded-[50px] px-15 block mx-auto mt-4 bg-primary"
+            className="rounded-[50px] px-15 mb-20 block mx-auto text-xl mt-4 bg-primary"
             onClick={resetTimer}
             disabled={loading}
           >
@@ -98,14 +103,35 @@ export const DemoSection = () => {
         </form>
         <AnimatePresence>
           {result && (
-            <motion.div
-              ref={resultRef}
-              initial={{ opacity: 0.4, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0.4, y: -100 }}
-            >
-              <Result title={result.title} content={result.content} />
-            </motion.div>
+            <>
+              <motion.div
+                ref={resultRef}
+                initial={{ opacity: 0.4, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0.4, y: -100 }}
+              >
+                <Result
+                  title={result.title}
+                  content={result.content}
+                  addedAt={result.origin.added_at}
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0.4, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0.4, y: -100 }}
+                className="mt-10 pb-20 flex justify-center"
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-[50px] px-15 mb-20 text-xl mt-4 bg-primary"
+                >
+                  <Link href="/savings/">Next</Link>
+                </Button>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>

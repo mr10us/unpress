@@ -1,6 +1,6 @@
 import { Typewriter } from "@/components/animations/Typewriter/Typewriter";
 
-export const Result = ({ title, content }) => {
+export const Result = ({ title, content, addedAt }) => {
   return (
     <div>
       <Typewriter asChild>
@@ -11,7 +11,8 @@ export const Result = ({ title, content }) => {
 
       <Typewriter speed="default" asChild>
         <div className="content card px-10 py-8 text-gray-100">
-          <h3>{title}</h3>
+          <p>{addedAt}</p>
+          <h3 className="text-3xl">{title}</h3>
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </Typewriter>
