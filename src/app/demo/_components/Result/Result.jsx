@@ -10,7 +10,6 @@ export const Result = ({ title, content, addedAt, origin }) => {
         </h2>
       </Typewriter>
 
-      <Typewriter speed="default" asChild>
         <div className="content card px-10 py-8 text-gray-100">
           <p>{formatedTime}</p>
           <h3 className="text-3xl">{title}</h3>
@@ -22,7 +21,6 @@ export const Result = ({ title, content, addedAt, origin }) => {
             </a>
           </p>
         </div>
-      </Typewriter>
     </div>
   );
 };

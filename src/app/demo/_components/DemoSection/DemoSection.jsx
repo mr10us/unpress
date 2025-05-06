@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Stopwatch } from "../Stopwatch/Stopwatch";
 import { Tag } from "../Tag/Tag";
 import tags from "./tags.json";
@@ -14,7 +14,6 @@ import Link from "next/link";
 
 export const DemoSection = () => {
   const stopwatchRef = useRef();
-  const resultRef = useRef();
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -60,12 +59,6 @@ export const DemoSection = () => {
     }
   };
 
-  useEffect(() => {
-    if (resultRef.current) {
-      resultRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [result]);
-
   return (
     <section className="relative xl:min-h-screen pt-[200px] pb-0 bg-[radial-gradient(57.81%_57.81%_at_42.89%_40.51%,_#370540_0%,_#280945_32.69%,_#0A0113_100%)] overflow-hidden isolate">
       <HeroGeometry className="absolute top-0 bottom-0 right-0 h-full object-cover -z-[1] pointer-events-none" />
@@ -105,7 +98,6 @@ export const DemoSection = () => {
           {result && (
             <>
               <motion.div
-                ref={resultRef}
                 initial={{ opacity: 0.4, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0.4, y: -100 }}
