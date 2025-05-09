@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const stages = ["searching", "gathering", "fact checking", "generation"];
 
-export const ProgressBar = () => {
+export const ProgressBar = ({stopSignal}) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -14,6 +14,10 @@ export const ProgressBar = () => {
 
       if (current >= 100) {
         clearInterval(interval);
+      }
+      if (stopSignal) {
+        clearInterval(interval);
+        setProgress(100);
       }
     }, 500 + Math.random() * 500);
 
