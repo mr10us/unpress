@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { Result } from "../Result/Result";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
+import { ProgressBlock } from "../ProgressBlock/ProgressBlock";
 
 export const DemoSection = () => {
   const stopwatchRef = useRef();
@@ -94,6 +95,7 @@ export const DemoSection = () => {
             Generate
           </Button>
         </form>
+        {loading ? <ProgressBlock /> : null}
         <AnimatePresence>
           {result && (
             <>
