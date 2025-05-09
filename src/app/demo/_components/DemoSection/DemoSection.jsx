@@ -28,6 +28,11 @@ export const DemoSection = () => {
     stopwatchRef.current?.reset();
   };
 
+  const handleReset = () => {
+    resetTimer();
+    setResult(null);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -89,7 +94,7 @@ export const DemoSection = () => {
             size="lg"
             type="submit"
             className="rounded-[50px] px-15 mb-20 block mx-auto text-xl mt-4 bg-primary"
-            onClick={resetTimer}
+            onClick={handleReset}
             disabled={loading}
           >
             Generate
@@ -100,7 +105,7 @@ export const DemoSection = () => {
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 1 } }}
+              exit={{ opacity: 0, transition: { duration: 0.5 } }}
             >
               <ProgressBlock signal={result} />
             </motion.div>
