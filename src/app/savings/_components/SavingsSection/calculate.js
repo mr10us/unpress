@@ -6,7 +6,8 @@ export function calculateSavings(amountPerDay, pricePerArticle) {
   const monthBank = 1750; // $1750 per month for ai model;
   const yearBank = 21000; // $21000 per year for ai model (monthBank * 12);
   const clientArticlesCountPerYear = amountPerDay * 365;
-  const aiExpencesPerYear = yearBank / clientArticlesCountPerYear;
+  const aiExpencesPerArticle = yearBank / clientArticlesCountPerYear;
+  const aiExpencesPerYear = aiExpencesPerArticle * clientArticlesCountPerYear;
 
   return clientExpences - aiExpencesPerYear;
 }
