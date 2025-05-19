@@ -12,6 +12,29 @@ export const metadata = {
     shortcut: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
+  openGraph: {
+    title: "Unpress AI",
+    description:
+      "Unpress AI is a leading Ukrainian artificial intelligence-based platform that makes news creation fast, accurate, and cost-effective.",
+    url: "https://unpress.ai",
+    type: "website",
+    images: [
+      {
+        url: "https://unpress.ai/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Unpress AI Open Graph Image",
+      },
+    ],
+  },
+  twitter: {
+  card: "summary_large_image",
+  title: "Unpress AI",
+  description:
+    "Unpress AI is a leading Ukrainian artificial intelligence-based platform that makes news creation fast, accurate, and cost-effective.",
+  images: ["https://unpress.ai/images/og-image.png"],
+},
+
 };
 
 export default function RootLayout({ children }) {
