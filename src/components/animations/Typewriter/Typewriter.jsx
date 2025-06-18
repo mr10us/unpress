@@ -39,12 +39,17 @@ export function Typewriter({
         const totalChars = chars.length;
 
         const stagger = speed === "default" ? 0.005 : 1.5 / totalChars;
+
+        split.chars.forEach((char) => {
+          char.style.display = "inline-block";
+          char.style.willChange = "transform, opacity";
+        });
         
 
         gsap.from(split.chars, {
           y: 0,
           opacity: 0,
-          duration: 0.7,
+          duration: 0.4,
           ease: "power4",
           stagger: stagger,
           delay: delay / 1000,

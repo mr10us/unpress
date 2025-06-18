@@ -8,6 +8,8 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
   const isTouchDevice = useIsTouchDevice();
   const observerRef = useRef(null);
   const isInView = useRef(false);
+  const animationFrameRef = useRef(null);
+  const coordsRef = useRef({ x: 0, y: 0, hasMoved: false });
 
   useEffect(() => {
     if (!refTarget?.current) return;
@@ -22,9 +24,7 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
     observerRef.current.observe(refTarget.current);
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      observerRef.current?.disconnect();
     };
   }, [refTarget]);
 
@@ -35,43 +35,55 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
     const container = refTarget.current;
     const tiltElement = wrapperRef.current;
 
+    const update = () => {
+      if (!isInView.current) {
+        animationFrameRef.current = requestAnimationFrame(update);
+        return;
+      }
+
+      const { x, y, hasMoved } = coordsRef.current;
+
+      if (hasMoved) {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const offsetX = x - centerX;
+        const offsetY = y - centerY;
+
+        const percentX = offsetX / (rect.width / 2);
+        const percentY = offsetY / (rect.height / 2);
+
+        const rotateX = Math.max(-maxTilt, Math.min(maxTilt, -percentY * maxTilt));
+        const rotateY = Math.max(-maxTilt, Math.min(maxTilt, percentX * maxTilt));
+
+        const translateX = Math.max(-maxShift, Math.min(maxShift, percentX * maxShift));
+        const translateY = Math.max(-maxShift, Math.min(maxShift, percentY * maxShift));
+
+        tiltElement.style.transform = `
+          perspective(1000px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          translate3d(${translateX}px, ${translateY}px, 0px)
+        `;
+        coordsRef.current.hasMoved = false;
+      }
+
+      animationFrameRef.current = requestAnimationFrame(update);
+    };
+
     const handleMouseMove = (e) => {
-      if (!isInView.current) return;
-
-      const rect = container.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      const offsetX = e.clientX - centerX;
-      const offsetY = e.clientY - centerY;
-
-      const percentX = offsetX / (rect.width / 2);
-      const percentY = offsetY / (rect.height / 2);
-
-      const rotateX = Math.max(-maxTilt, Math.min(maxTilt, -percentY * maxTilt));
-      const rotateY = Math.max(-maxTilt, Math.min(maxTilt, percentX * maxTilt));
-
-      const translateX = Math.max(-maxShift, Math.min(maxShift, percentX * maxShift));
-      const translateY = Math.max(-maxShift, Math.min(maxShift, percentY * maxShift));
-
-      tiltElement.style.transform = `
-        perspective(1000px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translate3d(${translateX}px, 0px, 0px)
-        translate3d(0px, ${translateY}px, 0px)
-      `;
+      coordsRef.current.x = e.clientX;
+      coordsRef.current.y = e.clientY;
+      coordsRef.current.hasMoved = true;
     };
 
     const handleMouseLeave = () => {
-      if (!isInView.current) return;
-
       tiltElement.style.transition = "transform 0.3s ease";
       tiltElement.style.transform = `
         perspective(1000px)
         rotateX(0deg)
         rotateY(0deg)
-        translate3d(0px, 0px, 0px)
         translate3d(0px, 0px, 0px)
       `;
       setTimeout(() => {
@@ -82,7 +94,10 @@ function Tilt({ children, refTarget, maxTilt = 5, maxShift = 0, className }) {
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
 
+    animationFrameRef.current = requestAnimationFrame(update);
+
     return () => {
+      cancelAnimationFrame(animationFrameRef.current);
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseleave", handleMouseLeave);
     };

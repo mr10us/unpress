@@ -48,12 +48,12 @@ export const _desktop = () => {
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=" + window.innerHeight * (total),
+        end: "+=" + window.innerHeight * total,
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
-        // onLeave: self => self.disable(),
-        // onEnterBack: self => self.enable(),
+        onLeave: self => self.freeze(),
+        onEnterBack: self => self.resume(),
       },
     });
 
@@ -150,7 +150,7 @@ export const _desktop = () => {
 
     disks.forEach((disk, index) => {
       const compressedY =
-        (index - (total) - (total - 1) / 2) * compressedSpacing * -1;
+        (index - total - (total - 1) / 2) * compressedSpacing * -1;
 
       timeline.to(
         disk,
@@ -192,6 +192,11 @@ export const _desktop = () => {
       },
       "<"
     );
+
+
+    return () => {
+      timeline.kill();
+    };
   }, []);
 
   return (
