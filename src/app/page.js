@@ -9,6 +9,7 @@ import { IntegrationsSection } from "@/components/Sections/IntegrationsSection/I
 import { ProblemsSection } from "@/components/Sections/ProblemsSection/ProblemsSection";
 import { StepsSection } from "@/components/Sections/StepsSection/StepsSection";
 import { TrustedSection } from "@/components/Sections/TrustedSection/TrustedSection";
+import { CyprusSection } from "@/components/Sections/CyprusSection/CyprusSection";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <IntegrationsSection />
       <TrustedSection />
       <FinalSection />
+      <CyprusSection />
     </>
   );
 }

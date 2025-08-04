@@ -17,8 +17,8 @@ export const Footer = () => {
           <EmailForm />
           <div className="grid grid-cols-2 md:flex md:flex-col gap-4 justify-self-center lg:justify-self-end text-xs text-gray-100 leading-5">
             <a href="tel:+380737337377">+38 073 733 73 77</a>
-            <a className="underline" href="mailto:seo@unpress.ai">
-              seo@unpress.ai
+            <a className="underline" href="mailto:ceo@unpress.ai">
+              ceo@unpress.ai
             </a>
             <a className="underline" href="mailto:legal@unpress.ai">
               sales@unpress.ai
