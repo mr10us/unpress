@@ -17,15 +17,7 @@
       "static/chunks/445-494cf172c0c92f2e.js",
       "static/chunks/671-72803cab6db3ddbe.js",
       "static/chunks/874-7b07c39aa588eb21.js",
-      "static/chunks/app/layout-c696fe505c17f4f9.js"
-    ],
-    "/qrdemo/page": [
-      "static/chunks/webpack-3dc44137c4e4f67e.js",
-      "static/chunks/4bd1b696-7fd59640feaa61e9.js",
-      "static/chunks/684-c8d071355995c14a.js",
-      "static/chunks/main-app-7a30da09ea272231.js",
-      "static/chunks/445-494cf172c0c92f2e.js",
-      "static/chunks/app/qrdemo/page-2d8dd5cb2e99a823.js"
+      "static/chunks/app/layout-88999e5050ea5c10.js"
     ],
     "/page": [
       "static/chunks/webpack-3dc44137c4e4f67e.js",
@@ -40,6 +32,18 @@
       "static/chunks/691-d9a070a89c84cbfe.js",
       "static/chunks/app/page-88f95e106b41a021.js"
     ],
+    "/savings/page": [
+      "static/chunks/webpack-3dc44137c4e4f67e.js",
+      "static/chunks/4bd1b696-7fd59640feaa61e9.js",
+      "static/chunks/684-c8d071355995c14a.js",
+      "static/chunks/main-app-7a30da09ea272231.js",
+      "static/chunks/c15bf2b0-d67976aba37a88f8.js",
+      "static/chunks/352-a4e2f5812e83d4a1.js",
+      "static/chunks/480-8e29537359bdec80.js",
+      "static/chunks/671-72803cab6db3ddbe.js",
+      "static/chunks/108-b8f7dc46f0246222.js",
+      "static/chunks/app/savings/page-a787efc0719e5c6f.js"
+    ],
     "/demo/page": [
       "static/chunks/webpack-3dc44137c4e4f67e.js",
       "static/chunks/4bd1b696-7fd59640feaa61e9.js",
@@ -53,17 +57,13 @@
       "static/chunks/108-b8f7dc46f0246222.js",
       "static/chunks/app/demo/page-b34e58446c1261a9.js"
     ],
-    "/savings/page": [
+    "/qrdemo/page": [
       "static/chunks/webpack-3dc44137c4e4f67e.js",
       "static/chunks/4bd1b696-7fd59640feaa61e9.js",
       "static/chunks/684-c8d071355995c14a.js",
       "static/chunks/main-app-7a30da09ea272231.js",
-      "static/chunks/c15bf2b0-d67976aba37a88f8.js",
-      "static/chunks/352-a4e2f5812e83d4a1.js",
-      "static/chunks/480-8e29537359bdec80.js",
-      "static/chunks/671-72803cab6db3ddbe.js",
-      "static/chunks/108-b8f7dc46f0246222.js",
-      "static/chunks/app/savings/page-a787efc0719e5c6f.js"
+      "static/chunks/445-494cf172c0c92f2e.js",
+      "static/chunks/app/qrdemo/page-2d8dd5cb2e99a823.js"
     ]
   }
 }

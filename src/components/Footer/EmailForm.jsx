@@ -11,11 +11,9 @@ export const EmailForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      toast({
-        title: "Invalid email",
+    if (email.length == 0 || !/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Invalid email", {
         description: "Please enter a valid email address.",
-        variant: "destructive",
       });
       return;
     }
@@ -37,18 +35,18 @@ export const EmailForm = () => {
       const data = await res.json();
 
       if (res.ok) {
-        toast("Success!", {
+        toast.success("Success", {
           description: "Your email was sent successfully.",
         });
         setEmail("");
       } else {
-        toast("Error", {
+        toast.error("Error", {
           description: data?.error || "Something went wrong.",
           variant: "destructive",
         });
       }
     } catch (error) {
-      toast("Network error", {
+      toast.error("Network error", {
         description: "Unable to send your message. Try again later.",
         variant: "destructive",
       });
