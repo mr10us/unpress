@@ -41,10 +41,28 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/demo",
+      "regex": "^/demo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo(?:/)?$"
+    },
+    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/qrdemo",
+      "regex": "^/qrdemo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/qrdemo(?:/)?$"
+    },
+    {
+      "page": "/savings",
+      "regex": "^/savings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/savings(?:/)?$"
     }
   ],
   "dataRoutes": [],

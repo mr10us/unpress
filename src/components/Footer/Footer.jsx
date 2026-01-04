@@ -20,10 +20,10 @@ export const Footer = () => {
             <a className="underline" href="mailto:ceo@unpress.ai">
               ceo@unpress.ai
             </a>
-            <a className="underline" href="mailto:legal@unpress.ai">
+            <a className="underline" href="mailto:sales@unpress.ai">
               sales@unpress.ai
             </a>
-            <a className="underline" href="mailto:legali@unpress.ai">
+            <a className="underline" href="mailto:legal@unpress.ai">
               legal@unpress.ai
             </a>
           </div>
