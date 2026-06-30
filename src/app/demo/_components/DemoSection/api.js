@@ -2,7 +2,7 @@ export const generateNews = async (subject) => {
   const token = getBase64UTCDate();
 
   try {
-    const response = await fetch("https://demo.unpressai.cloud/api/generate-article", {
+    const response = await fetch("http://89.116.236.210/api/generate-article", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
