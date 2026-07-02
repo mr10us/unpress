@@ -2,7 +2,7 @@ export const generateNews = async (subject) => {
   const token = getBase64UTCDate();
 
   try {
-    const response = await fetch("https://true.in.ua/api/generate-article", {
+    const response = await fetch("https://app.true.in.ua/api/generate-article", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
